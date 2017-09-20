@@ -1,5 +1,12 @@
 {
   "name": "cardboard",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "engines": {
+    "node": "6.10.1",
+    "npm": "3.10.x"
+  },
+  "scripts": {
+    "postinstall": "webpack"
+  }
 }
