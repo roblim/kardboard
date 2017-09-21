@@ -9,10 +9,13 @@ export const RECEIVE_SIGNUP_ERRORS = 'RECEIVE_SIGNUP_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const LOG_OUT = 'LOG_OUT';
 
-export const receiveCurrentUser = currentUser => ({
-  type: RECEIVE_CURRENT_USER,
-  currentUser
-});
+export const receiveCurrentUser = currentUser => {
+  window.currentUser = currentUser;
+  return {
+    type: RECEIVE_CURRENT_USER,
+    currentUser
+  };
+};
 
 export const receiveSessionErrors = errors => ({
   type: RECEIVE_SESSION_ERRORS,
@@ -23,6 +26,13 @@ export const receiveSignupErrors = errors => ({
   type: RECEIVE_SIGNUP_ERRORS,
   errors
 });
+
+export const completeLogOut = () => {
+  window.currentUser = undefined;
+  return {
+    type: LOG_OUT
+  };
+};
 
 export const signUp = (newUser) => (dispatch) => (
   postUser(newUser).then(
@@ -40,7 +50,7 @@ export const logIn = (user) => (dispatch) => (
 
 export const logOut = () => (dispatch) => (
   deleteSession().then(
-    () => (dispatch({ type: LOG_OUT})),
+    () => (dispatch(completeLogOut())),
     (errors) => (dispatch(receiveSessionErrors(errors)))
   )
 );

@@ -1,8 +1,8 @@
 const postUser = (user) => (
   $.ajax({
-    method: 'POST',
+    method: 'post',
     url: '/api/users',
-    data: user
+    data: { user }
   })
 );
 
@@ -10,7 +10,7 @@ const postSession = (user) => (
   $.ajax({
     method: 'POST',
     url: '/api/session',
-    data: user
+    data: { user }
   })
 );
 
