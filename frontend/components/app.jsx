@@ -9,10 +9,11 @@ import {
 } from 'react-router-dom';
 import SessionFormContainer from './session_form/session_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import NavBarContainer from './nav_bar/nav_bar_container';
 
 const App = () => (
   <div className="app-container">
-    <h1 className='site-title'>KrdBrd</h1>
+    <NavBarContainer />
     <Switch>
       <AuthRoute path="/" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />

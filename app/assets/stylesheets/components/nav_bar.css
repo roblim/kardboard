@@ -1,0 +1,21 @@
+.nav-bar-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.site-title {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 900;
+  margin: auto;
+}
+
+.boards-button {
+
+}
+
+.logout-button {
+
+}

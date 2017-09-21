@@ -12,6 +12,7 @@
  *
  *= require_self
  *= require_tree .
+ *= require ./components/nav_bar.css
  *= require ./components/session_form.css
  */
 
