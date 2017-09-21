@@ -37,7 +37,7 @@ export const completeLogOut = () => {
 export const signUp = (newUser) => (dispatch) => (
   postUser(newUser).then(
     (createdUser) => (dispatch(receiveCurrentUser(createdUser))),
-    (errors) => (dispatch(receiveSignupErrors(errors.resonseJSON))
+    (errors) => (dispatch(receiveSignupErrors(errors.responseJSON))
   ))
 );
 
