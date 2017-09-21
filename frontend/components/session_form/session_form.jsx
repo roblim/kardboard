@@ -14,7 +14,7 @@ class SessionForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
-      this.props.history.push('/');
+      this.props.history.push('/boards');
     }
   }
 
@@ -31,16 +31,16 @@ class SessionForm extends React.Component {
   }
 
   altLink() {
-    if (this.props.formType === 'login') {
-      return <Link to="/signup">Sign Up</Link>;
+    if (this.props.formType === 'signup') {
+      return <Link to="/">Log In</Link>;
     } else {
-      return <Link to="/login">Log In</Link>;
+      return <Link to="/signup">Sign Up</Link>;
     }
   }
 
   renderErrors() {
     return(
-      <ul>
+      <ul className="errors">
         {this.props.sessionErrors.map((error, idx) => (
           <li key={`sessionError-${idx}`}>
             {error}
@@ -71,7 +71,7 @@ class SessionForm extends React.Component {
 
   render() {
     let formType = this.props.formType;
-    formType === 'login' ? (formType = 'Log In') : (formType = 'Sign Up');
+    formType === 'signup' ? (formType = 'Sign Up') : (formType = 'Log In');
     return(
       <div className="session-form-container">
         <form onSubmit={this.handleSubmit} className="session-form-box">

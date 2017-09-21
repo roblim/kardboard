@@ -1,0 +1,40 @@
+.app-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 5px solid green;
+  height: 99vh;
+}
+
+.site-title {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.errors {
+  color: red;
+}
+
+.session-form-container {
+  border: 2px solid red;
+  margin: auto;
+  padding: 5px;
+  width: 30%
+}
+
+.session-form-box {
+  border: 2px solid blue;
+  padding: 5px
+}
+
+.session-form {
+  border: 2px solid green;
+  padding: 5px
+}
+
+.session-input {
+
+}
