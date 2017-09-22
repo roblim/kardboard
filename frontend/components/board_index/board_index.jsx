@@ -23,7 +23,7 @@ class BoardIndex extends React.Component {
           )}
           <Link to="/boards/new">
             <div className="new-board-tile">
-              <div className="board-tile-text">
+              <div className="new-board-tile-text">
                 Create new board...
               </div>
             </div>

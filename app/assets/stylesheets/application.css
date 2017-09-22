@@ -17,10 +17,21 @@
  */
 
 body {
-  background-color: aquamarine;
+  background-color: rgb(255, 255, 255);
   font-family: 'Open Sans', sans-serif;
 }
 
-h1 {
+body h1 {
   font-size: 30px;
+  font-weight: bold;
+}
+
+.app-container {
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  border: 5px solid green;
+  height: 99vh;
 }
