@@ -1,0 +1,33 @@
+.board-index-container {
+  padding: 20px;
+}
+
+.board-tile, .new-board-tile {
+  display: flex;
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin: 10px;
+  width: 300px;
+  height: 100px;
+}
+
+.board-tile:hover, .new-board-tile:hover {
+  background-color: lightgrey;
+}
+
+.board-index-box {
+  border: 2px solid orange;
+  display: flex;
+  flex-flow: wrap;
+  padding: 10px;
+  margin: 10px;
+}
+
+.board-index-box a {
+  text-decoration: none;
+}
+
+.board-tile-text {
+  margin: auto;
+
+}

@@ -5,7 +5,7 @@ const BoardIndexItem = (props) => {
   return(
     <Link to={`/boards/${props.board.id}`}>
       <div className="board-tile">
-        {props.board.title}
+        <div className="board-tile-text">{props.board.title}</div>
       </div>
     </Link>
   );
