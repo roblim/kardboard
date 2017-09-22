@@ -27,7 +27,6 @@ body h1 {
 }
 
 .app-container {
-  /*border: 5px solid green;*/
   font-family: 'Open Sans', sans-serif;
   display: flex;
   align-content: center;
