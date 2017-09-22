@@ -27,11 +27,11 @@ body h1 {
 }
 
 .app-container {
+  /*border: 5px solid green;*/
   font-family: 'Open Sans', sans-serif;
   display: flex;
   align-content: center;
   justify-content: flex-start;
   flex-direction: column;
-  /*border: 5px solid green;*/
   height: 99vh;
 }
