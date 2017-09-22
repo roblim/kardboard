@@ -34,6 +34,10 @@ export const completeLogOut = () => {
   };
 };
 
+export const clearErrors = () => (dispatch) => (
+  dispatch({ type: CLEAR_ERRORS })
+);
+
 export const signUp = (newUser) => (dispatch) => (
   postUser(newUser).then(
     (createdUser) => (dispatch(receiveCurrentUser(createdUser))),

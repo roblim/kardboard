@@ -32,15 +32,19 @@ class SessionForm extends React.Component {
 
   altLink() {
     if (this.props.formType === 'signup') {
-      return <Link to="/">Log In</Link>;
+      return <Link to="/" onClick={this.props.clearErrors}>
+              Log In
+             </Link>;
     } else {
-      return <Link to="/signup">Sign Up</Link>;
+      return <Link to="/signup" onClick={this.props.clearErrors}>
+              Sign Up
+             </Link>;
     }
   }
 
   renderErrors() {
     return(
-      <ul className="errors">
+      <ul className="session-errors">
         {this.props.sessionErrors.map((error, idx) => (
           <li key={`sessionError-${idx}`}>
             {error}
