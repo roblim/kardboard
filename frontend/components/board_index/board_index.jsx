@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { ProtectedRoute } from '../../util/route_util';
 import BoardIndexItem from './board_index_item';
+import BoardFormContainer from './board_form_container';
 
 class BoardIndex extends React.Component {
   constructor(props) {
@@ -29,6 +31,8 @@ class BoardIndex extends React.Component {
             </div>
           </Link>
         </div>
+        <ProtectedRoute path='/boards/new'
+               component={ BoardFormContainer } />
       </div>
     );
   }

@@ -1,10 +1,11 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class BoardForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { title: '', user_id: this.props.userId };
-    this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(field) {
@@ -13,22 +14,31 @@ class BoardForm extends React.Component {
     );
   }
 
-  handleClick(event) {
+  handleSubmit(event) {
+    event.preventDefault();
     this.props.createBoard(this.state);
+    this.props.history.push('/boards');
   }
 
   render() {
     return(
       <div className="board-form-container">
-        <form className="board-form">
-          <input type="text"
-                 placeholder="Add board title"
-                 value={this.state.title}
-                 onChange={this.handleChange}
-                 />
+        <form className="board-form"
+              onSubmit={this.handleSubmit}>
+          <div className="board-form-input">
+            <input type="text"
+                   placeholder="Add board title"
+                   value={this.state.title}
+                   onChange={this.handleChange('title')}
+                   />
+          </div>
+          <div className="submit-button">
+            <input type="submit" value="Create Board" />
+          </div>
         </form>
-        <button onClick={this.handleClick}>Create Board</button>
       </div>
     );
   }
 }
+
+export default withRouter(BoardForm);
