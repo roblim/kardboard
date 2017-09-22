@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 
+import{
+  fetchBoards,
+  fetchBoard,
+  createBoard,
+  updateBoard,
+  destroyBoard
+} from './actions/board_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -20,6 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // testing start
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.fetchBoards = fetchBoards;
+  window.fetchBoard = fetchBoard;
+  window.createBoard = createBoard;
+  window.updateBoard = updateBoard;
+  window.destroyBoard = destroyBoard;
   // testing end
 
   const root = document.getElementById('root');
