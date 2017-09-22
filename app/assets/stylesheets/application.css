@@ -32,6 +32,6 @@ body h1 {
   align-content: center;
   justify-content: flex-start;
   flex-direction: column;
-  border: 5px solid green;
+  /*border: 5px solid green;*/
   height: 99vh;
 }
