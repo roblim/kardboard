@@ -29,4 +29,4 @@ class BoardIndex extends React.component {
   }
 }
 
-export default BoardIndex;
+export default withRouter(BoardIndex);
