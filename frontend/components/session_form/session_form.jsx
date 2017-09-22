@@ -58,14 +58,19 @@ class SessionForm extends React.Component {
   signUpField() {
     if (this.props.formType === 'signup') {
       return (
-        <label>Name:
+        <div>
+          <label>Name:</label>
+          <br/>
           <input type="text"
             value={this.state.name}
             onChange={this.handleChange('name')}
             className="session-input"
           />
-        </label>
+          <br/>
+        </div>
       );
+    } else {
+      return null;
     }
   }
 
@@ -75,29 +80,25 @@ class SessionForm extends React.Component {
     return(
       <div className="session-form-container">
         <form onSubmit={this.handleSubmit} className="session-form-box">
-          Welcome to KrdBrd!
+          <h1>Welcome to KrdBrd!</h1>
           <br/>
-          Please {formType} or {this.altLink()}
+          <p>Please {formType} or {this.altLink()}</p>
           {this.renderErrors()}
           <div className="session-form">
-            <br/>
             {this.signUpField()}
-            <br/>
-              <label>Email:
+                <label>Email:</label>
                 <input type="text"
                   value={this.state.email}
                   onChange={this.handleChange('email')}
                   className="session-input"
                 />
-              </label>
             <br/>
-              <label>Password:
+                <label>Password:</label>
                 <input type="password"
                   value={this.state.password}
                   onChange={this.handleChange('password')}
                   className="session-input"
                 />
-              </label>
               <br/>
               <input type="submit" value="Submit" />
           </div>

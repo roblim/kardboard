@@ -17,5 +17,10 @@
  */
 
 body {
-  background-color: lightblue;
+  background-color: aquamarine;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 30px;
 }

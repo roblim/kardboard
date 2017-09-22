@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 
-import { signUp, logIn, logOut } from './actions/session_actions';
+import { getBoards,
+         getBoard,
+         postBoard,
+         patchBoard,
+         deleteBoard } from './util/board_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -21,9 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // testing start
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.signUp = signUp;
-  window.logIn = logIn;
-  window.logOut = logOut;
+  window.getBoards = getBoards;
+  window.getBoard = getBoard;
+  window.patchBoard = patchBoard;
+  window.postBoard = postBoard;
+  window.deleteBoard = deleteBoard; 
   // testing end
 
   const root = document.getElementById('root');
