@@ -18,6 +18,7 @@ class BoardForm extends React.Component {
     event.preventDefault();
     this.props.createBoard(this.state);
     this.props.history.push('/boards');
+    this.props.that.closeModal();
   }
 
   render() {

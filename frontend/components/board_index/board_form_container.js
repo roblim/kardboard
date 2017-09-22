@@ -2,8 +2,9 @@ import { connect } from 'react-redux';
 import { createBoard } from '../../actions/board_actions';
 import BoardForm from './board_form';
 
-const mapStateToProps = (state) => ({
-  userId: state.session.currentUser.id
+const mapStateToProps = (state, ownProps) => ({
+  userId: state.session.currentUser.id,
+  that: ownProps.that
 });
 
 const mapDispatchToProps = (dispatch) => {
