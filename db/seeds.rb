@@ -6,23 +6,23 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user1 = User.create(name: 'user1',
-                    email: 'user1@user1.com',
+user1 = User.create(name: 'Yayoi Kusama',
+                    email: 'y.kusama@art.jp',
                     password: 'password')
 
-user2 = User.create(name: 'user2',
-                    email: 'user2@user2.com',
+user2 = User.create(name: 'Sean McNamara',
+                    email: 'sean@sean.com',
                     password: 'password')
 
-user3 = User.create(name: 'user3',
-                    email: 'user3@user3.com',
+user3 = User.create(name: 'Rob Lim',
+                    email: 'rob@rob.com',
                     password: 'password')
 
-user4 = User.create(name: 'user4',
-                    email: 'user4@user4.com',
+user4 = User.create(name: 'Galen Barbour',
+                    email: 'galen@galen.com',
                     password: 'password')
 
-board1 = Board.create(title: 'board1', user_id: 1, starred: false)
-board2 = Board.create(title: 'board2', user_id: 1, starred: true)
-board3 = Board.create(title: 'board3', user_id: 1, starred: true)
-board4 = Board.create(title: 'board4', user_id: 1, starred: false)
+board1 = Board.create(title: 'Pumpkins', user_id: 1, starred: false)
+board2 = Board.create(title: 'Polka Dots', user_id: 1, starred: true)
+board3 = Board.create(title: 'Orbs', user_id: 1, starred: true)
+board4 = Board.create(title: 'Swirls', user_id: 1, starred: false)
