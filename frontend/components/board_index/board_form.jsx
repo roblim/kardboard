@@ -34,7 +34,8 @@ class BoardForm extends React.Component {
                    />
           </div>
           <div className="submit-button">
-            <input type="submit" value="Create Board" />
+            <input type="submit" hidden />
+            <button type="button" onClick={this.handleSubmit}>Create Board</button>
           </div>
         </form>
       </div>

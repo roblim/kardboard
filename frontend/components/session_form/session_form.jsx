@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
+const demoUser = {
+  email: 'y.kusama@art.jp',
+  password: 'password'
+};
+
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -10,6 +15,7 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoClick = this.demoClick.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -28,6 +34,10 @@ class SessionForm extends React.Component {
     event.preventDefault();
     const user = this.state;
     this.props.processForm(user);
+  }
+
+  demoClick() {
+    this.props.logIn(demoUser);
   }
 
   altLink() {
@@ -104,7 +114,9 @@ class SessionForm extends React.Component {
                   className="session-input"
                 />
               <br/>
-              <input type="submit" value="Submit" />
+              <input type="submit" onClick={this.handleSubmit} hidden />
+              <button type="button" onClick={this.handleSubmit}>{formType}</button>
+              <button type="button" onClick={this.demoClick}>Demo</button>
           </div>
         </form>
       </div>
