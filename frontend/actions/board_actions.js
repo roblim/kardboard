@@ -23,8 +23,8 @@ export const removeBoard = (board) => ({
   board
 });
 
-export const fetchBoards = () => (dispatch) => (
-  getBoards().then(
+export const fetchBoards = (userId) => (dispatch) => (
+  getBoards(userId).then(
     boards => dispatch(receiveBoards(boards))
   )
 );

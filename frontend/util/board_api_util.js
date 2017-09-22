@@ -1,5 +1,4 @@
-const getBoards = () => {
-  let userId = window.currentUser.id;
+const getBoards = (userId) => {
   return(
     $.ajax({
     url: `/api/users/${userId}/boards`

@@ -5,13 +5,14 @@ import { selectBoards } from '../../reducers/selectors';
 
 const mapStateToProps = (state) => {
   return {
+    userId: state.session.currentUser.id,
     boards: selectBoards(state)
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchBoards: () => dispatch(fetchBoards())
+    fetchBoards: (userId) => dispatch(fetchBoards(userId))
   };
 };
 
