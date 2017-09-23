@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920162026) do
+ActiveRecord::Schema.define(version: 20170923212914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,11 +26,11 @@ ActiveRecord::Schema.define(version: 20170920162026) do
 
   create_table "boards", force: :cascade do |t|
     t.string "title", null: false
-    t.integer "user_id", null: false
+    t.integer "owner_id", null: false
     t.boolean "starred", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_boards_on_user_id"
+    t.index ["owner_id"], name: "index_boards_on_owner_id"
   end
 
   create_table "cards", force: :cascade do |t|

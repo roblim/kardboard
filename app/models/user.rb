@@ -21,6 +21,7 @@ class User < ApplicationRecord
 
   has_many :boards
   has_many :comments
+  has_many :board_shares
 
   def self.find_by_credentials(email, password)
     user = User.find_by_email(email)

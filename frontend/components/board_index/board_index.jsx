@@ -69,7 +69,7 @@ class BoardIndex extends React.Component {
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Create Board"
-        >
+        > // ew ;)
           <BoardFormContainer that={this}/>
         </Modal>
       </div>

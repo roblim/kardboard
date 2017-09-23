@@ -54,4 +54,5 @@ button:hover {
 
 input[type=text], input[type=password] {
   font-size: 16px;
+  padding: 5px;
 }
