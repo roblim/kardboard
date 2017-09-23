@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       resources :cards, only: [:index]
     end
 
-    resources :cards, only: [:update, :destroy, :create] do
+    resources :cards, only: [:update, :destroy, :create, :show] do
       resources :comments, only: [:index]
     end
 

@@ -24,18 +24,18 @@ class Api::BoardsController < ApplicationController
 
   def update
     @board = Board.find_by_id(params[:id])
-    render json: ['Board does not exist'] and return unless @board
+    render json: ['Board does not exist'], status: 404 and return unless @board
     @board.update_attributes(board_params)
     if @board.save
       render :show
     else
-      render json: @user.errors.full_messages, status: 404
+      render json: @user.errors.full_messages, status: 400
     end
   end
 
   def destroy
     @board = Board.find_by_id(params[:id])
-    render json: ['Board does not exist'] and return unless @board
+    render json: ['Board does not exist'], status: 404 and return unless @board
     @board = @board.destroy
     render :show
   end
