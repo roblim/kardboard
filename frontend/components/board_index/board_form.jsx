@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 class BoardForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { title: '', user_id: this.props.userId };
+    this.state = { title: '', owner_id: this.props.userId };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 

@@ -1,6 +1,6 @@
 class Api::BoardsController < ApplicationController
   def index
-    @boards = Board.where(user_id: params[:user_id])
+    @boards = Board.where(owner_id: params[:user_id])
     render :index
   end
 
@@ -43,6 +43,6 @@ class Api::BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:title, :user_id, :starred)
+    params.require(:board).permit(:title, :owner_id, :starred)
   end
 end

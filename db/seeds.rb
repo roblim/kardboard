@@ -22,7 +22,7 @@ user4 = User.create(name: 'Galen Barbour',
                     email: 'galen@galen.com',
                     password: 'password')
 
-board1 = Board.create(title: 'Pumpkins', user_id: 1, starred: false)
-board2 = Board.create(title: 'Polka Dots', user_id: 1, starred: true)
-board3 = Board.create(title: 'Orbs', user_id: 1, starred: true)
-board4 = Board.create(title: 'Swirls', user_id: 1, starred: false)
+board1 = Board.create(title: 'Pumpkins', owner_id: 1, starred: false)
+board2 = Board.create(title: 'Polka Dots', owner_id: 1, starred: true)
+board3 = Board.create(title: 'Orbs', owner_id: 1, starred: true)
+board4 = Board.create(title: 'Swirls', owner_id: 1, starred: false)
