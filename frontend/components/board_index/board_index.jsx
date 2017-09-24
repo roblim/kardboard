@@ -4,6 +4,7 @@ import { ProtectedRoute } from '../../util/route_util';
 import BoardIndexItem from './board_index_item';
 import BoardFormContainer from './board_form_container';
 import Modal from 'react-modal';
+import { openModal, afterOpenModal, closeModal } from '../../util/modal_util';
 
 const customStyles = {
   content : {
@@ -27,10 +28,7 @@ class BoardIndex extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-  }
 
-  componentDidMount() {
-    this.props.fetchBoards(this.props.userId);
   }
 
   openModal() {
@@ -45,23 +43,27 @@ class BoardIndex extends React.Component {
     this.setState({ modalIsOpen: false });
   }
 
+  componentDidMount() {
+    this.props.fetchBoards(this.props.userId);
+  }
+
   render() {
     if (!this.props.boards) { return null; }
     return(
       <div className="board-index-container">
-        <h1>Private Boards</h1>
+        <h1 className="board-index-title">Private Boards</h1>
         <div className="board-index-box">
           {this.props.boards.map((board, idx) => (
             <BoardIndexItem board={board} key={`board-${idx}`} />
             )
           )}
-          <Link to="/boards/new" onClick={this.openModal}>
-            <div className="new-board-tile">
+
+            <div className="new-board-tile" onClick={this.openModal}>
               <div className="new-board-tile-text">
                 Create new board...
               </div>
             </div>
-          </Link>
+
         </div>
         <Modal
           isOpen={this.state.modalIsOpen}
@@ -69,7 +71,7 @@ class BoardIndex extends React.Component {
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Create Board"
-        > 
+        >
           <BoardFormContainer that={this}/>
         </Modal>
       </div>

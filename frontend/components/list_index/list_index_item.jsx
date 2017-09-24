@@ -3,7 +3,9 @@ import React from 'react';
 const ListIndexItem = (props) => {
   return(
     <div className="list-index-item">
-      {props.list.title}
+      <div className="list-index-item-title">
+        {props.list.title}
+      </div>
     </div>
   )
 }

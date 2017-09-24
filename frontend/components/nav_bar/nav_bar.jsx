@@ -29,9 +29,9 @@ class NavBar extends React.Component {
   render() {
     return(
       <div className="nav-bar-container">
-        {this.boardsButton()}
+        <div className="boards-button">{this.boardsButton()}</div>
         <Link to="/"><h1 className='site-title'>KrdBrd</h1></Link>
-        {this.logOutButton()}
+        <div className="log-out-button">{this.logOutButton()}</div>
       </div>
     );
   }

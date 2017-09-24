@@ -1,0 +1,30 @@
+.list-index-box {
+  display: flex;
+  margin: 20px;
+}
+
+.list-index-item {
+  width: 270px;
+  flex: none;
+  background-color: rgb(226, 228, 230);
+  margin: 12px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.list-index-item-title {
+  font-weight: bold;
+}
+
+.new-list-tile {
+  width: 270px;
+  flex: none;
+  margin: 12px;
+  padding: 10px;
+  border-radius: 5px;
+  background: rgb(224, 224, 224)
+}
+
+.new-list-tile:hover {
+  cursor: pointer;
+}

@@ -12,8 +12,6 @@
  *
  *= require_self
  *= require_tree .
- *= require ./components/nav_bar.css
- *= require ./components/session_form.css
  */
 
 body {
@@ -27,12 +25,26 @@ body h1 {
 }
 
 .app-container {
+  background-image: url(http://www.imgbase.info/images/safe-wallpapers/photography/mountains/29387_mountains_mountain_scene.jpg);
+  background-size: cover;
   font-family: 'Open Sans', sans-serif;
   display: flex;
   align-content: center;
   justify-content: flex-start;
   flex-direction: column;
   height: 99vh;
+}
+
+::-webkit-scrollbar-track-piece {
+  background: rgba(0,0,0,0.15);
+}
+
+
+
+.content-area {
+  padding: 20px;
+  height: 100%;
+  overflow-x: auto;
 }
 
 button {

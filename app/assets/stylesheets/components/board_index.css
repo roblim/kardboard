@@ -1,12 +1,12 @@
-.board-index-container {
-  padding: 20px;
-}
-
 .board-index-box {
   display: flex;
   flex-flow: wrap;
   padding: 10px;
   margin: 10px;
+}
+
+.board-index-title {
+  color: white;
 }
 
 .board-tile {
@@ -50,4 +50,5 @@
 .new-board-tile:hover {
   background-color: rgb(213, 218, 220);
   color: rgb(77, 77, 77);
+  cursor: pointer;
 }

@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchLists: (boardId) => dispatch(fetchLists(boardId))
-})
+});
 
 const ListIndexContainer = connect(
   mapStateToProps,

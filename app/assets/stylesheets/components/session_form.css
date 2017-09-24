@@ -1,16 +1,18 @@
 .session-form-container {
-  padding: 5px;
+  height: 100%;
   display: flex;
+}
+
+.session-form-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 400px;
+  padding: 5px;
   flex-direction: column;
   justify-content: center;
   border: 2px solid grey;
   margin: auto;
-  width: 400px;
   border-radius: 10px;
-}
-
-.session-form-box {
-  padding: 5px;
+  padding: 20px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
