@@ -29,7 +29,7 @@ class Api::BoardsController < ApplicationController
     if @board.save
       render :show
     else
-      render json: @user.errors.full_messages, status: 400
+      render json: @board.errors.full_messages, status: 400
     end
   end
 

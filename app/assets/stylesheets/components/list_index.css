@@ -22,9 +22,10 @@
   margin: 12px;
   padding: 10px;
   border-radius: 5px;
-  background: rgb(224, 224, 224)
+  background: rgba(224, 224, 224,.7)
 }
 
 .new-list-tile:hover {
   cursor: pointer;
+  background-color: rgba(178,178,178,.7);
 }

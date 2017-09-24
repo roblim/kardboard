@@ -12,4 +12,9 @@
 #
 
 class Card < ApplicationRecord
+  validates :title, :list_id, presence: true
+
+  belongs_to :list, dependent: :destroy
+  has_many :comments
+  
 end

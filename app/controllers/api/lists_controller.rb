@@ -9,7 +9,7 @@ class Api::ListsController < ApplicationController
     if @list.save
       render :show
     else
-      render json: @board.errors.full_messages, status: 400
+      render json: @list.errors.full_messages, status: 400
     end
   end
 
@@ -20,7 +20,7 @@ class Api::ListsController < ApplicationController
     if @list.save
       render :show
     else
-      render json: @user.errors.full_messages, status: 400
+      render json: @list.errors.full_messages, status: 400
     end
   end
 
