@@ -15,33 +15,33 @@ export const receiveLists = (lists) => ({
 export const receiveList = (list) => ({
   type: RECEIVE_LIST,
   list
-})
+});
 
 export const removeList = (list) => ({
   type: DELETE_LIST,
   list
-})
+});
 
 export const fetchLists = (boardId) => (dispatch) => (
   getLists(boardId).then(
     lists => dispatch(receiveLists(lists))
   )
-)
+);
 
 export const createList = (list) => (dispatch) => (
   postList(list).then(
     createdList => dispatch(receiveList(createdList))
   )
-)
+);
 
 export const updateList = (list) => (dispatch) => (
   patchList(list).then(
     updatedList => dispatch(receiveList(updatedList))
   )
-)
+);
 
 export const destroyList = (list) => (dispatch) => (
   deleteList(list).then(
     deletedList => dispatch(removeList(list))
   )
-)
+);
