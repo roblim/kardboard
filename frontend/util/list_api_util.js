@@ -10,7 +10,7 @@ const postList = (list) => (
     method: 'post',
     data: { list }
   })
-)
+);
 
 const patchList = (list) => (
   $.ajax({
@@ -18,13 +18,13 @@ const patchList = (list) => (
     method: 'patch',
     data: { list }
   })
-)
+);
 
 const deleteList = (listId) => (
   $.ajax({
-    url: `/api/lists/${list.id}`,
+    url: `/api/lists/${listId}`,
     method: 'delete'
   })
-)
+);
 
 export { getLists, postList, patchList, deleteList };
