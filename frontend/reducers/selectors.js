@@ -1,9 +1,14 @@
 export const selectBoards = (state) => {
-  let boards = Object.values(state.entities.boards);
+  const boards = Object.values(state.entities.boards);
   return boards;
 };
 
 export const selectLists = (state) => {
-  let lists = Object.values(state.entities.lists);
+  const lists = Object.values(state.entities.lists);
   return lists;
+}
+
+export const selectCards = (state) => {
+  const cards = Object.values(state.entities.cards);
+  return cards; 
 }
