@@ -22,8 +22,8 @@ export const removeList = (list) => ({
   list
 })
 
-export const fetchLists = () => (dispatch) => (
-  getLists.then(
+export const fetchLists = (boardId) => (dispatch) => (
+  getLists(boardId).then(
     lists => dispatch(receiveLists(lists))
   )
 )

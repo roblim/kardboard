@@ -30,7 +30,7 @@ class NavBar extends React.Component {
     return(
       <div className="nav-bar-container">
         {this.boardsButton()}
-        <h1 className='site-title'>KrdBrd</h1>
+        <Link to="/"><h1 className='site-title'>KrdBrd</h1></Link>
         {this.logOutButton()}
       </div>
     );

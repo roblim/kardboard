@@ -26,3 +26,13 @@ board1 = Board.create(title: 'Pumpkins', owner_id: 1, starred: false)
 board2 = Board.create(title: 'Polka Dots', owner_id: 1, starred: true)
 board3 = Board.create(title: 'Orbs', owner_id: 1, starred: true)
 board4 = Board.create(title: 'Swirls', owner_id: 1, starred: false)
+
+list1 = List.create(title: 'Circles', board_id: 1)
+list2 = List.create(title: 'Squares', board_id: 1)
+list3 = List.create(title: 'Hexagons', board_id: 1)
+list4 = List.create(title: 'Bubbles', board_id: 1)
+
+list5 = List.create(title: 'Sponges', board_id: 2)
+list6 = List.create(title: 'Heroes', board_id: 2)
+list7 = List.create(title: 'Sparkles', board_id: 2)
+list8 = List.create(title: 'Eggs', board_id: 2)
