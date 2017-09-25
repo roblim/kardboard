@@ -41,13 +41,12 @@ class ListIndex extends React.Component {
     this.setState({ modalIsOpen: false });
   }
 
-  componentWillMount() {
-    this.props.fetchLists(this.props.board.id)
+  componentDidMount() {
+    this.props.fetchLists(this.props.boardId)
   }
 
   render() {
     if (!this.props.lists) { return null; }
-    if (!this.props.board) { return null; }
     return(
       <div className="list-index-container">
         <div className="list-index-box">
@@ -68,7 +67,7 @@ class ListIndex extends React.Component {
           style={customStyles}
           contentLabel="Create List"
         >
-          <ListFormContainer boardId={this.props.board.id} that={this}/>
+          <ListFormContainer boardId={this.props.boardId} that={this}/>
         </Modal>
       </div>
     )

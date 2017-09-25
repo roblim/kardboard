@@ -5,7 +5,7 @@ import CardIndex from './card_index';
 
 const mapStateToProps = (state, ownProps) => ({
   listId: ownProps.listId,
-  cards: selectCards(state)
+  cards: selectCards(state, ownProps.listId)
 });
 
 const mapDispatchToProps = (dispatch) => ({

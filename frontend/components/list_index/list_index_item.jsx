@@ -1,5 +1,5 @@
 import React from 'react';
-import CardIndexContainer from './card_index_container';
+import CardIndexContainer from '../card_index/card_index_container';
 
 const ListIndexItem = (props) => {
   return(

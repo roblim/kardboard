@@ -4,8 +4,8 @@ import { selectLists } from '../../reducers/selectors';
 import ListIndex from './list_index';
 
 const mapStateToProps = (state, ownProps) => ({
-  board: state.entities.boards[ownProps.match.params.boardId],
-  lists: selectLists(state)
+  boardId: parseInt(ownProps.match.params.boardId),
+  lists: selectLists(state, parseInt(ownProps.match.params.boardId))
 });
 
 const mapDispatchToProps = (dispatch) => ({

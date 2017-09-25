@@ -1,0 +1,14 @@
+.card-index-container {
+  margin-top: 10px;
+}
+
+.card-index-item {
+  margin: 6px;
+  background-color: rgb(255,255,255);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.card-index-item:hover {
+  background-color: rgb(237,239,240);
+}
