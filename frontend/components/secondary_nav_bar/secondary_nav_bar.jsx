@@ -7,7 +7,13 @@ class SecondaryNavBar extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    const boardId = this.props.match.params.boardId;
+    this.props.fetchBoard(boardId);
+  }
+
   render() {
+    if (!this.props.board) { return null; }
     return(
       <div className="secondary-nav-bar-container">
         <h1 className="secondary-nav-bar-title">{this.props.board.title}</h1>
