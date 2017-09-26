@@ -51,8 +51,7 @@ button {
   font-size: 14px;
   font-weight: bold;
   background-color: white;
-  border-style: solid;
-  border-color: green;
+  border: 1px solid grey;
   border-radius: 8px;
   padding-top: 5px;
   padding-bottom: 5px;

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { createBoard } from '../../actions/board_actions';
 import BoardForm from './board_form';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => ({
   userId: state.session.currentUser.id,
@@ -9,13 +10,13 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createBoard: (board) => dispatch(createBoard(board))
+    createBoard: (board, that) => dispatch(createBoard(board, that))
   };
 };
 
-const BoardFormContainer = connect(
+const BoardFormContainer = withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(BoardForm);
+)(BoardForm));
 
 export default BoardFormContainer;

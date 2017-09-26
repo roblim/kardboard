@@ -60,6 +60,21 @@ class CardDetail extends React.Component {
     }
   }
 
+  dueDate() {
+    if (this.props.card.dueDate) {
+      return(
+        <div className="card-detail-due-date">
+          <span className="due-date-field-name">
+            Due:&nbsp;
+          </span>
+          <span className="due-date">
+            {this.props.card.dueDate}
+          </span>
+        </div>
+      )
+    }
+  }
+
   render() {
     return(
       <div className="card-detail-container">
@@ -70,14 +85,7 @@ class CardDetail extends React.Component {
               <h1>{this.props.card.title}</h1>
               <p>in list {this.props.list.title}</p>
             </div>
-            <div className="card-detail-due-date">
-              <span className="due-date-field-name">
-                Due:&nbsp;
-              </span>
-              <span className="due-date">
-                {this.props.card.dueDate}
-              </span>
-            </div>
+            {this.dueDate()}
           </div>
 
           <div className="card-detail-description-box">
