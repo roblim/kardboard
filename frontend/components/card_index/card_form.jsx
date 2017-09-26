@@ -1,12 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-class ListForm extends React.Component {
+class CardForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { title: '', board_id: this.props.boardId };
+    this.state = { title: '', list_id: this.props.listId };
     this.handleSubmit = this.handleSubmit.bind(this);
-}
+  }
 
   handleChange(field) {
     return (event) => (
@@ -16,26 +16,25 @@ class ListForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.createList(this.state);
-    this.props.history.push(`/boards/${this.props.boardId}`);
+    this.props.createCard(this.state);
     this.props.that.closeModal();
   }
 
   render() {
     return(
-      <div className="list-form-container">
-        <form className="list-form"
+      <div className="card-form-container">
+        <form className="card-form"
               onSubmit={this.handleSubmit}>
-          <div className="list-form-input">
+          <div className="card-form-input">
             <input type="text"
-                   placeholder="Add a list..."
+                   placeholder="Add a card..."
                    value={this.state.title}
                    onChange={this.handleChange('title')}
                    />
           </div>
           <div className="submit-button">
             <input type="submit" hidden />
-            <button type="button" onClick={this.handleSubmit}>Save</button>
+            <button type="button" onClick={this.handleSubmit}>Add</button>
           </div>
         </form>
       </div>
@@ -43,4 +42,4 @@ class ListForm extends React.Component {
   }
 }
 
-export default withRouter(ListForm);
+export default withRouter(CardForm);

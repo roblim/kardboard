@@ -1,5 +1,6 @@
 .list-index-box {
   display: flex;
+  align-items: flex-start;
   margin: 20px;
   padding: 10px;
 }
@@ -9,12 +10,12 @@
   flex: none;
   background-color: rgb(226, 228, 230);
   margin: 12px;
-  padding: 10px;
   border-radius: 5px;
 }
 
 .list-index-item-title {
   font-weight: bold;
+  margin: 10px;
 }
 
 .new-list-tile {
@@ -23,7 +24,7 @@
   margin: 12px;
   padding: 10px;
   border-radius: 5px;
-  background: rgba(224, 224, 224,.7)
+  background: rgba(224, 224, 224,.7);
 }
 
 .new-list-tile:hover {

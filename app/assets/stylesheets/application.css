@@ -45,6 +45,7 @@ body h1 {
   padding: 20px;
   height: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
 }
 
 button {

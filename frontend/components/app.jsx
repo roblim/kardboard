@@ -16,7 +16,7 @@ import SecondaryNavBarContainer from './secondary_nav_bar/secondary_nav_bar_cont
 
 const App = () => (
   <div className="app-container">
-    <NavBarContainer />
+    <Route path="/" component={NavBarContainer} />
     <Route path="/boards/:boardId" component={SecondaryNavBarContainer} />
     <div className="content-area">
     <Switch>

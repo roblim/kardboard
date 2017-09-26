@@ -2,8 +2,12 @@
   margin-top: 10px;
 }
 
+.card-index-box {
+  overflow-y: auto;
+}
+
 .card-index-item {
-  margin: 6px;
+  margin: 10px;
   background-color: rgb(255,255,255);
   padding: 10px;
   border-radius: 5px;
@@ -11,4 +15,16 @@
 
 .card-index-item:hover {
   background-color: rgb(237,239,240);
+}
+
+.new-card-tile {
+  padding: 10px;
+  color: rgb(129,140,145);
+}
+
+.new-card-tile:hover {
+  cursor: pointer;
+  background-color: rgb(204,210,212);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
