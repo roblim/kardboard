@@ -48,7 +48,7 @@ class ListIndexItem extends React.Component {
         </div>
 
         <div className="card-index-container">
-          <CardIndexContainer listId={this.props.list.id} />
+          <CardIndexContainer list={this.props.list} />
         </div>
 
         <div className="new-card-tile" onClick={this.openModal}>

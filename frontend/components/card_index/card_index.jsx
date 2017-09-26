@@ -18,30 +18,10 @@ const customStyles = {
 class CardIndex extends React.Component {
   constructor(props) {
     super(props)
-
-    this.state = {
-      modalIsOpen: false
-    };
-
-    this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-  }
-
-  openModal() {
-    this.setState({ modalIsOpen: true });
-  }
-
-  afterOpenModal() {
-    // this.subtitle.style.color = '#f00';
-  }
-
-  closeModal() {
-    this.setState({ modalIsOpen: false });
   }
 
   componentDidMount() {
-    this.props.fetchCards(this.props.listId);
+    this.props.fetchCards(this.props.list.id);
   }
 
   render() {
@@ -51,7 +31,7 @@ class CardIndex extends React.Component {
       <div className="card-index-container">
         <div className="card-index-box">
           {this.props.cards.map((card, idx) => (
-            <CardIndexItem card={card} key={`card-${idx}`} />
+            <CardIndexItem card={card} key={`card-${idx}`} list={this.props.list} />
             )
           )}
         </div>

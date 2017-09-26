@@ -4,8 +4,8 @@ import { selectCards } from '../../reducers/selectors';
 import CardIndex from './card_index';
 
 const mapStateToProps = (state, ownProps) => ({
-  listId: ownProps.listId,
-  cards: selectCards(state, ownProps.listId)
+  list: ownProps.list,
+  cards: selectCards(state, ownProps.list.id)
 });
 
 const mapDispatchToProps = (dispatch) => ({
