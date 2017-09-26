@@ -1,4 +1,30 @@
 .card-detail-container {
-  width: 750px;
+  width: 570px;
   height: 600px;
+}
+
+.card-detail-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.due-date-field-name {
+  font-weight: bold;
+}
+
+.card-detail-description-box {
+  margin: 10px;
+}
+
+.card-detail-description-body:hover {
+  cursor: pointer;
+}
+
+.card-detail-description-body {
+  padding: 5px;
+}
+
+.card-detail-description-body:focus {
+  outline: 1px solid lightblue;
+  cursor: text;
 }

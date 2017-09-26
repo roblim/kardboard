@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchCard } from '../../actions/card_actions';
+import { fetchCard, updateCard } from '../../actions/card_actions';
 import CardDetail from './card_detail';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchCard: (cardId) => dispatch(fetchCard(cardId))
+  fetchCard: (cardId) => dispatch(fetchCard(cardId)),
+  updateCard: (card) => dispatch(updateCard(card))
 });
 
 const CardDetailContainer = connect(

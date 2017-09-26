@@ -15,6 +15,7 @@
 
 .card-index-item:hover {
   background-color: rgb(237,239,240);
+  cursor: pointer;
 }
 
 .new-card-tile {

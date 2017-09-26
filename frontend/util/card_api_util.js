@@ -21,7 +21,7 @@ const postCard = (card) => (
 const patchCard = (card) => (
   $.ajax({
     url: `/api/cards/${card.id}`,
-    metod: 'patch',
+    method: 'patch',
     data: { card }
   })
 );
