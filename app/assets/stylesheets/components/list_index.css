@@ -1,3 +1,6 @@
+.list-index-container {
+}
+
 .list-index-box {
   display: flex;
   align-items: flex-start;
@@ -19,7 +22,7 @@
 }
 
 .new-list-tile {
-  width: 270px;
+  width: 250px;
   flex: none;
   margin: 12px;
   padding: 10px;
