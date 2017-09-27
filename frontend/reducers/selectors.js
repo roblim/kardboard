@@ -14,3 +14,9 @@ export const selectCards = (state, listId) => {
   cards = cards.filter((card) => card.listId === listId);
   return cards;
 }
+
+export const selectComments = (state, cardId) => {
+  let comments = Object.values(state.entities.comments);
+  comments = comments.filter((comment) => comment.cardId === cardId);
+  return comments;
+}

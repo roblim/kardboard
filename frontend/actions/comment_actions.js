@@ -1,5 +1,4 @@
 import { getComments,
-         getComment,
          postComment,
          patchComment,
          deleteComment } from '../util/comment_api_util';

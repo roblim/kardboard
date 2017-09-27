@@ -26,4 +26,4 @@ const deleteComment = (commentId) => (
   })
 );
 
-export { getComments, getComment, postComment, patchComment, deleteComment };
+export { getComments, postComment, patchComment, deleteComment };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import DatePicker from 'react-toolbox/lib/date_picker';
+import CommentIndexContainer from '../comment_index/comment_index_container';
 
 class CardDetail extends React.Component {
   constructor(props) {
@@ -119,6 +120,8 @@ class CardDetail extends React.Component {
             {this.renderItemOrEditField(this.props.card)}
             {this.descriptionUpdateButton()}
           </div>
+
+          <CommentIndexContainer cardId={this.props.card.id} />
 
         </div>
       </div>

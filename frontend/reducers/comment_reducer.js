@@ -10,11 +10,11 @@ const CommentReducer = (state = {}, action) => {
   switch(action.type) {
     case RECEIVE_COMMENTS:
       return merge({}, state, action.comments);
-    case RECEIVE_CARD:
+    case RECEIVE_COMMENT:
       newState = merge({}, state);
       newState[action.comment.id] = action.comment;
       return comment;
-    case DELETE_CARD:
+    case DELETE_COMMENT:
       newState = merge({}, state);
       delete newState[action.comment.id];
       return newState;
