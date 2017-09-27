@@ -8,7 +8,7 @@ const getCard = (cardId) => (
   $.ajax({
     url: `/api/cards/${cardId}`
   })
-)
+);
 
 const postCard = (card) => (
   $.ajax({
@@ -16,7 +16,7 @@ const postCard = (card) => (
     method: 'post',
     data: { card }
   })
-)
+);
 
 const patchCard = (card) => (
   $.ajax({
@@ -30,6 +30,6 @@ const deleteCard = (cardId) => (
   $.ajax({
     url: `/api/cards/${cardId}`
   })
-)
+);
 
 export { getCards, getCard, postCard, patchCard, deleteCard };
