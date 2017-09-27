@@ -3,23 +3,24 @@
 }
 
 .comment-index-box {
-
+  padding: 10px;
 }
 
 .comment-index-item-container {
   display: flex;
+  border-bottom: 1px solid grey;
+  margin-bottom: 10px;
 }
 
 .comment-index-item-box {
   display: flex;
   flex-direction: column;
-  margin: 10px;
 }
 
 .comment-index-item-body {
-  margin: 10px;
 }
 
 .comment-index-item-info {
-  margin: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

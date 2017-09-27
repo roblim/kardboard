@@ -1,6 +1,7 @@
 .card-detail-container {
   width: 570px;
   height: 600px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .card-detail-header {
