@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchComments, destroyComment } from '../../actions/comment_actions';
-import { selectCards } from '../../reducers/selectors';
+import { selectComments } from '../../reducers/selectors';
 import CommentIndex from './comment_index';
 
 const mapStateToProps = (state, ownProps) => ({
