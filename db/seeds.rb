@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
 user1 = User.create(name: 'Yayoi Kusama',
                     email: 'y.kusama@art.jp',
                     password: 'password')
@@ -49,3 +51,13 @@ card3 = Card.create(title: 'Run in circles', list_id: 1)
 card4 = Card.create(title: 'Eat circle shapes', list_id: 1)
 card5 = Card.create(title: 'Swim in circles', list_id: 1)
 card6 = Card.create(title: 'Erase circles', list_id: 1)
+
+
+comment1 = Comment.create(card_id: 1, author_id: 1, body: Faker::Lorem.paragraph)
+comment2 = Comment.create(card_id: 1, author_id: 1, body: Faker::Lorem.paragraph)
+comment3 = Comment.create(card_id: 1, author_id: 1, body: Faker::Lorem.paragraph)
+comment4 = Comment.create(card_id: 1, author_id: 1, body: Faker::Lorem.paragraph)
+comment5 = Comment.create(card_id: 1, author_id: 1, body: Faker::Lorem.paragraph)
+comment6 = Comment.create(card_id: 1, author_id: 1, body: Faker::Lorem.paragraph)
+comment7 = Comment.create(card_id: 1, author_id: 1, body: Faker::Lorem.paragraph)
+comment8 = Comment.create(card_id: 1, author_id: 1, body: Faker::Lorem.paragraph)
