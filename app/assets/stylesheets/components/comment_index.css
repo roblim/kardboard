@@ -1,0 +1,25 @@
+.comment-index-container {
+
+}
+
+.comment-index-box {
+
+}
+
+.comment-index-item-container {
+  display: flex;
+}
+
+.comment-index-item-box {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.comment-index-item-body {
+  margin: 10px;
+}
+
+.comment-index-item-info {
+  margin: 10px;
+}
