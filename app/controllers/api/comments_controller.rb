@@ -16,7 +16,7 @@ class Api::CommentsController < ApplicationController
   def update
     @comment = Comment.find_by_id(params[:id])
     render json: ["Comment does not exist"], status: 404 and return unless @comment
-    @comment.update_attributes(card_params)
+    @comment.update_attributes(comment_params)
     if @comment.save
       render :show
     else
@@ -25,8 +25,8 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Card.find_by_id(params[:id])
-    render json: ["Card does not exist"], status: 404 and return unless @comment
+    @comment = Comment.find_by_id(params[:id])
+    render json: ["Comment does not exist"], status: 404 and return unless @comment
     @comment = @comment.destroy
     render :show
   end
