@@ -47,7 +47,7 @@ export const updateCard = (card) => (dispatch) => (
   )
 );
 
-export const destroyCard = (card) => (card) => (
+export const destroyCard = (card) => (dispatch) => (
   deleteCard(card).then(
     deletedCard => dispatch(removeCard(card))
   )

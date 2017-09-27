@@ -4,12 +4,6 @@ const getComments = (cardId) => (
   })
 );
 
-const getComment = (commentId) => (
-  $.ajax({
-    url: `/api/comments/${commentId}`
-  })
-);
-
 const postComment = (comment) => (
   $.ajax({
     url: 'api/comments',
