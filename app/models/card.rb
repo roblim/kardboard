@@ -16,5 +16,7 @@ class Card < ApplicationRecord
 
   belongs_to :list, dependent: :destroy
   has_many :comments
-  
+
+  has_many :authors, -> { distinct }, through: :comments
+
 end
