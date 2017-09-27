@@ -16,30 +16,50 @@
 
 body {
   background-color: rgb(255, 255, 255);
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body h1 {
-  font-size: 30px;
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+}
+body h2 {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+body h3 {
+  display: block;
+  font-size: 1.17em;
+  font-weight: bold;
+}
+body h4 {
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+}
+body h5 {
+  display: block;
+  font-size: .83em;
+  font-weight: bold;
+}
+body h6 {
+  display: block;
+  font-size: .67em;
   font-weight: bold;
 }
 
 .app-container {
   background-image: url(http://www.imgbase.info/images/safe-wallpapers/photography/mountains/29387_mountains_mountain_scene.jpg);
   background-size: cover;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   display: flex;
   align-content: center;
   justify-content: flex-start;
   flex-direction: column;
   height: 99vh;
 }
-
-::-webkit-scrollbar-track-piece {
-  background: rgba(0,0,0,0.15);
-}
-
-
 
 .content-area {
   padding: 20px;
@@ -70,4 +90,21 @@ input[type=text], input[type=password] {
 
 a {
   text-decoration: none;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font: inherit;
+  font-size: 14px;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font: inherit;
+  font-size: 14px;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font: inherit;
+  font-size: 14px;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font: inherit;
+  font-size: 14px;
 }

@@ -1,4 +1,6 @@
 var path = require("path");
+const webpack = require('webpack');
+
 
 module.exports = {
   context: __dirname,
@@ -16,11 +18,21 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
+      },
+      {
+        test: /(\.scss|\.css)$/,
+        loaders: [
+          require.resolve('style-loader'),
+          require.resolve('css-loader') + '?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          require.resolve('sass-loader') + '?sourceMap'
+        ]
       }
-    ]
+    ],
   },
+
   devtool: 'source-maps',
   resolve: {
-    extensions: [".js", ".jsx", "*"]
-  }
+    extensions: [".js", ".jsx", ".css", ".scss", ".json", "*"]
+  },
+
 };

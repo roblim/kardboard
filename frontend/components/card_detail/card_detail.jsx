@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import ContentEditable from 'react-contenteditable';
+import DatePicker from 'react-toolbox/lib/date_picker';
 
 class CardDetail extends React.Component {
   constructor(props) {
@@ -8,12 +8,24 @@ class CardDetail extends React.Component {
 
     this.state = {
       description: this.props.card.description,
-      editing: null
+      _description: null,
+      editing: null,
+      dueDate: this.loadDate(this.props.card.dueDate)
     }
 
     this.toggleEditing = this.toggleEditing.bind(this)
     this.handleInput = this.handleInput.bind(this)
     this.handleUpdate = this.handleUpdate.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleDateChange = this.handleDateChange.bind(this)
+  }
+
+  loadDate(date) {
+    if (date) {
+      return new Date(date);
+    } else {
+      return null;
+    }
   }
 
   toggleEditing(cardId) {
@@ -23,14 +35,28 @@ class CardDetail extends React.Component {
   }
 
   handleInput(event) {
-    this.setState( { description: event.currentTarget.innerText })
+    this.setState( { _description: event.currentTarget.innerText })
+  }
+
+  handleChange(event) {
+    this.setState( { _description: event.currentTarget.value })
   }
 
   handleUpdate() {
     this.props.updateCard({
       id: this.props.card.id,
-      description: this.state.description
+      description: this.state._description
     })
+    this.state.description = this.state._description;
+    this.state.editing = null;
+  }
+
+  handleDateChange(value) {
+    this.props.updateCard({
+      id: this.props.card.id,
+      due_date: value.toJSON()
+    });
+    this.setState( { dueDate: value } );
   }
 
   renderItemOrEditField(card) {
@@ -48,8 +74,14 @@ class CardDetail extends React.Component {
       )
     } else {
       return(
-        null
-
+        <div className="card-detail-description-entry">
+          <textarea className="desc-create"
+                    placeholder="Add a more detailed description..."
+                    onChange={this.handleChange}></textarea>
+          <button type="button" onClick={this.handleUpdate}>
+            Save
+          </button>
+        </div>
       )
     }
   }
@@ -61,18 +93,13 @@ class CardDetail extends React.Component {
   }
 
   dueDate() {
-    if (this.props.card.dueDate) {
       return(
-        <div className="card-detail-due-date">
-          <span className="due-date-field-name">
-            Due:&nbsp;
-          </span>
-          <span className="due-date">
-            {this.props.card.dueDate}
-          </span>
-        </div>
+        <DatePicker label="Due Date"
+                    sundayFirstDayOfWeek
+                    onChange={this.handleDateChange}
+                    value={this.state.dueDate}
+                    />
       )
-    }
   }
 
   render() {
@@ -80,15 +107,15 @@ class CardDetail extends React.Component {
       <div className="card-detail-container">
         <div className="card-detail-box">
 
-          <div className="card-detail-header">
-            <div className="card-detail-title">
-              <h1>{this.props.card.title}</h1>
-              <p>in list {this.props.list.title}</p>
-            </div>
-            {this.dueDate()}
+          <div className="card-detail-title">
+            <h2>{this.props.card.title}</h2>
+            <p>in list {this.props.list.title}</p>
           </div>
 
+          {this.dueDate()}
+
           <div className="card-detail-description-box">
+            <h4>Description</h4>
             {this.renderItemOrEditField(this.props.card)}
             {this.descriptionUpdateButton()}
           </div>

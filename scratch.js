@@ -11,3 +11,14 @@ handleChange(event) {
     onChange={this.handleChange}
     />
 </div>
+
+else {
+  return(
+    <DateTimePicker
+      editFormat={formatter}
+      defaultValue={new Date()}
+      format={{ raw: 'MMM dd, yyyy'}}
+      time={false}
+      />
+  );
+}

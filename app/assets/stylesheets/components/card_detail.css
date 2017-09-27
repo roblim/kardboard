@@ -22,9 +22,19 @@
 
 .card-detail-description-body {
   padding: 5px;
+  margin: 5px;
+}
+
+.card-detail-description-entry {
+  margin: 10px;
 }
 
 .card-detail-description-body:focus {
   outline: 1px solid lightblue;
   cursor: text;
+}
+
+.desc-create {
+  width: 100%;
+  height: 100px;
 }
