@@ -99,6 +99,10 @@ textarea {
   padding: 8px;
 }
 
+input {
+
+}
+
 textarea:focus {
   outline: none;
   border: 1px solid lightblue;

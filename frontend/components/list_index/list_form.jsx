@@ -1,11 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import onClickOutside from 'react-onclickoutside';
 
 class ListForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { title: '', board_id: this.props.boardId };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
 }
 
   handleChange(field) {
@@ -18,7 +20,11 @@ class ListForm extends React.Component {
     event.preventDefault();
     this.props.createList(this.state);
     this.props.history.push(`/boards/${this.props.boardId}`);
-    this.props.that.closeModal();
+    this.props.that.setState( { addListActive: false } );
+  }
+
+  handleClickOutside(event) {
+    this.props.that.setState( { addListActive: false } );
   }
 
   render() {
@@ -43,4 +49,4 @@ class ListForm extends React.Component {
   }
 }
 
-export default withRouter(ListForm);
+export default withRouter(onClickOutside(ListForm));

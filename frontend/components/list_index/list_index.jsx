@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
 import ListIndexItem from './list_index_item';
 import ListFormContainer from './list_form_container'
-import Modal from 'react-modal';
 
 const customStyles = {
   content : {
@@ -21,28 +20,34 @@ class ListIndex extends React.Component {
     super(props)
 
     this.state = {
-      modalIsOpen: false
+      addListActive: false
     };
 
-    this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  openModal() {
-    this.setState({ modalIsOpen: true });
-  }
-
-  afterOpenModal() {
-    // this.subtitle.style.color = '#f00';
-  }
-
-  closeModal() {
-    this.setState({ modalIsOpen: false });
+  handleClick() {
+    this.setState( { addListActive: true } );
   }
 
   componentDidMount() {
     this.props.fetchLists(this.props.boardId)
+  }
+
+  addList() {
+    if (!this.state.addListActive) {
+      return(
+        <div className="new-list-tile" onClick={this.handleClick}>
+          <div className="new-list-tile-text">
+            Add a list...
+          </div>
+        </div>
+      )
+    } else {
+      return(
+        <ListFormContainer boardId={this.props.boardId} that={this}/>
+      )
+    }
   }
 
   render() {
@@ -54,21 +59,8 @@ class ListIndex extends React.Component {
             <ListIndexItem list={list} key={`list-${idx}`} />
             )
           )}
-            <div className="new-list-tile" onClick={this.openModal}>
-              <div className="new-list-tile-text">
-                Add a list...
-              </div>
-            </div>
+          {this.addList()}
         </div>
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Create List"
-        >
-          <ListFormContainer boardId={this.props.boardId} that={this}/>
-        </Modal>
       </div>
     )
   }

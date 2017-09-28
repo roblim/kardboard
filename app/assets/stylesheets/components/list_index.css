@@ -1,4 +1,5 @@
 .list-index-container {
+
 }
 
 .list-index-box {
@@ -33,4 +34,18 @@
 .new-list-tile:hover {
   cursor: pointer;
   background-color: rgba(178,178,178,.7);
+}
+
+.list-form-container {
+  width: 250px;
+  flex: none;
+  margin: 12px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(226, 228, 230)
+}
+
+.list-form-input input {
+  width: 100%;
+  box-sizing: border-box;
 }
