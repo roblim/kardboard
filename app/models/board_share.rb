@@ -17,7 +17,7 @@ class BoardShare < ApplicationRecord
   belongs_to :collaborator,
   foreign_key: :collaborator_id,
   primary_key: :id,
-  className: :User
+  class_name: :User
 
   belongs_to :board
 
