@@ -9,6 +9,7 @@ class CommentIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchComments(this.props.cardId);
+    this.props.fetchAuthors(this.props.cardId);
   }
 
   render() {
@@ -18,7 +19,9 @@ class CommentIndex extends React.Component {
       <div className="comment-index-container">
         <div className="comment-index-box">
           {this.props.comments.map((comment, idx) => (
-            <CommentIndexItem comment={comment} key={`comment-${idx}`} />
+            <CommentIndexItem comment={comment}
+                              key={`comment-${idx}`}
+                              author={this.props.authors[comment.authorId]} />
           )
         )}
         </div>

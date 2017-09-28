@@ -20,3 +20,10 @@ export const selectComments = (state, cardId) => {
   comments = comments.filter((comment) => comment.cardId === cardId);
   return comments;
 }
+
+export const selectAuthors = (state, cardId) => {
+  let comments = selectComments(state, cardId);
+  let authors = [];
+  comments.forEach((comment) => authors.push(state.entities.users[comment.authorId]));
+  return authors;
+}

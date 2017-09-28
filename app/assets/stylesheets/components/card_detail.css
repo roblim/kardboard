@@ -18,6 +18,10 @@
   margin-bottom: 10px;
 }
 
+.card-detail-title h2 {
+  margin-bottom: 10px;
+}
+
 .card-detail-description-body:hover {
   cursor: pointer;
 }
@@ -47,6 +51,9 @@
 
 .theme__inputElement___4bZUj:hover, .theme__inputElement___x7MhN:hover {
   background-color: lightblue;
+}
+
+.theme__input___lFVgC.theme__input___2ISvI {
 }
 
 .due-date-container {

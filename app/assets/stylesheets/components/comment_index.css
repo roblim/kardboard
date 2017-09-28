@@ -3,24 +3,33 @@
 }
 
 .comment-index-box {
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+
 }
 
 .comment-index-item-container {
   display: flex;
-  border-bottom: 1px solid grey;
   margin-bottom: 10px;
 }
 
 .comment-index-item-box {
+  border-bottom: 1px solid rgb(226, 228, 230);
   display: flex;
+  width: 100%;
   flex-direction: column;
+}
+
+.comment-index-item-author-name {
+  margin-bottom: 5px;
 }
 
 .comment-index-item-body {
 }
 
 .comment-index-item-info {
+  padding-bottom: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
   color: rgb(129, 140, 145);

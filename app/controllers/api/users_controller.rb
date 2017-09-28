@@ -2,7 +2,8 @@ class Api::UsersController < ApplicationController
   def index
     @authors = Card.find_by_id(params[:card_id]).authors
     render :index
-    
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
