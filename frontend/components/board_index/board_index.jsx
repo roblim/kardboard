@@ -3,8 +3,6 @@ import { Link, withRouter } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
 import BoardIndexItem from './board_index_item';
 import BoardFormContainer from './board_form_container';
-import Modal from 'react-modal';
-import { openModal, afterOpenModal, closeModal } from '../../util/modal_util';
 
 const customStyles = {
   content : {
@@ -22,29 +20,34 @@ class BoardIndex extends React.Component {
     super(props);
 
     this.state = {
-      modalIsOpen: false
+      addBoardActive: false
     };
 
-    this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-
-  }
-
-  openModal() {
-    this.setState({ modalIsOpen: true });
-  }
-
-  afterOpenModal() {
-    // this.subtitle.style.color = '#f00';
-  }
-
-  closeModal() {
-    this.setState({ modalIsOpen: false });
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchBoards(this.props.userId);
+  }
+
+  handleClick() {
+    this.setState( { addBoardActive: true } );
+  }
+
+  addBoard() {
+    if (!this.state.addBoardActive) {
+      return(
+        <div className="new-board-tile" onClick={this.handleClick}>
+          <div className="new-board-tile-text">
+            Create new board...
+          </div>
+        </div>
+      )
+    } else {
+      return(
+        <BoardFormContainer that={this}/>
+      )
+    }
   }
 
   render() {
@@ -57,23 +60,8 @@ class BoardIndex extends React.Component {
             <BoardIndexItem board={board} key={`board-${idx}`} />
             )
           )}
-
-            <div className="new-board-tile" onClick={this.openModal}>
-              <div className="new-board-tile-text">
-                Create new board...
-              </div>
-            </div>
-
+          {this.addBoard()}
         </div>
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Create Board"
-        >
-          <BoardFormContainer that={this}/>
-        </Modal>
       </div>
     );
   }

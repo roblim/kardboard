@@ -1,11 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import onClickOutside from 'react-onclickoutside';
 
 class BoardForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { title: '', owner_id: this.props.userId };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
   handleChange(field) {
@@ -18,6 +20,10 @@ class BoardForm extends React.Component {
     event.preventDefault();
     this.props.createBoard(this.state, this);
     this.props.that.closeModal();
+  }
+
+  handleClickOutside(event) {
+    this.props.that.setState( {addBoardActive: false } );
   }
 
   render() {
@@ -42,4 +48,4 @@ class BoardForm extends React.Component {
   }
 }
 
-export default withRouter(BoardForm);
+export default withRouter(onClickOutside(BoardForm));

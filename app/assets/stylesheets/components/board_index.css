@@ -52,3 +52,24 @@
   color: rgb(77, 77, 77);
   cursor: pointer;
 }
+
+.board-form-container {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgb(226, 228, 230);
+  border-radius: 5px;
+  width: 280px;
+  height: 80px;
+  margin: 10px;
+}
+
+.board-form {
+  width: 100%;
+}
+
+.board-form-input input {
+  width: 100%;
+  box-sizing: border-box;
+}
