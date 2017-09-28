@@ -7,8 +7,8 @@ export const receiveAuthors = (authors) => ({
   users: authors
 });
 
-export const fetchAuthors = (cardId) => (dispatch) => {
+export const fetchAuthors = (cardId) => (dispatch) => (
   getAuthors(cardId).then(
     authors => dispatch(receiveAuthors(authors))
-  );
-};
+  )
+);
