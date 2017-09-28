@@ -23,4 +23,44 @@
 .comment-index-item-info {
   margin-top: 5px;
   margin-bottom: 5px;
+  color: rgb(129, 140, 145);
+}
+
+.comment-form-box {
+  display: flex
+}
+
+.author-avatar {
+  width: 34px;
+  margin-right: 10px;
+}
+
+.author-initials {
+  background-color: rgb(213, 218, 220);
+  color: rgb(77, 77, 77);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 36px;
+
+}
+
+.comment-form-container {
+  margin-top: 15px;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.comment-form-body-input {
+  height: 70px;
+  font-size: 14px;
+}
+
+.save-comment-button {
+  flex: none;
 }

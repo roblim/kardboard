@@ -16,7 +16,6 @@ class CommentIndex extends React.Component {
 
     return(
       <div className="comment-index-container">
-        <h4>Comments</h4>
         <div className="comment-index-box">
           {this.props.comments.map((comment, idx) => (
             <CommentIndexItem comment={comment} key={`comment-${idx}`} />

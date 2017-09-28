@@ -13,4 +13,13 @@
 class BoardShare < ApplicationRecord
   validates :board_id, :collaborator_id, presence: true
   validates :board_id, uniqueness: { scope: :collaborator_id }
+
+  belongs_to :collaborator,
+  foreign_key: :collaborator_id,
+  primary_key: :id,
+  className: :User
+
+  belongs_to :board
+
+  has_one :owner, through: :board
 end

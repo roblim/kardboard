@@ -7,11 +7,9 @@ const mapStateToProps = (state, ownProps) => ({
   that: ownProps.that
 });
 
-const mapDispatchToProps = (dispatch) => {
-  return{
-    createCard: (card) => dispatch(createCard(card))
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  createCard: (card) => dispatch(createCard(card))
+});
 
 const CardFormContainer = connect(
   mapStateToProps,

@@ -21,4 +21,11 @@ class Board < ApplicationRecord
   has_many :lists
   has_many :board_shares
 
+  def collaborators=(arr)
+    @collaborators = arr
+  end
+
+  def collaborators
+    @collaborators
+  end
 end

@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import DatePicker from 'react-toolbox/lib/date_picker';
 import CommentIndexContainer from '../comment_index/comment_index_container';
+import CommentFormContainer from '../comment_index/comment_form_container';
 
 class CardDetail extends React.Component {
   constructor(props) {
@@ -95,12 +96,22 @@ class CardDetail extends React.Component {
 
   dueDate() {
       return(
-        <DatePicker label="Due Date"
-                    sundayFirstDayOfWeek
-                    onChange={this.handleDateChange}
-                    value={this.state.dueDate}
-                    />
+        <span className="due-date-picker">
+          <DatePicker label="Due Date"
+                      sundayFirstDayOfWeek
+                      onChange={this.handleDateChange}
+                      value={this.state.dueDate}
+                      />
+        </span>
       )
+  }
+
+  selectDueDate() {
+    if (!this.state.dueDate) {
+      return(
+        <span className="due-date-select-prompt"><h4>Select Due Date:</h4></span>
+      );
+    }
   }
 
   render() {
@@ -113,14 +124,18 @@ class CardDetail extends React.Component {
             <p>in list {this.props.list.title}</p>
           </div>
 
-          {this.dueDate()}
+          <div className="due-date-container">
+            {this.selectDueDate()}
+            {this.dueDate()}
+          </div>
 
           <div className="card-detail-description-box">
             <h4>Description</h4>
             {this.renderItemOrEditField(this.props.card)}
             {this.descriptionUpdateButton()}
           </div>
-
+          <h4>Comments</h4>
+          <CommentFormContainer cardId={this.props.card.id} />
           <CommentIndexContainer cardId={this.props.card.id} />
 
         </div>

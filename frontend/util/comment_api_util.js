@@ -8,7 +8,7 @@ const postComment = (comment) => (
   $.ajax({
     url: 'api/comments',
     method: 'post',
-    data: { card }
+    data: { comment }
   })
 );
 

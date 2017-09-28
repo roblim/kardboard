@@ -4,7 +4,10 @@ import { withRouter } from 'react-router-dom';
 class CardForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { title: '', list_id: this.props.listId };
+    this.state = {
+                   title: '',
+                   list_id: this.props.listId
+                 };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 

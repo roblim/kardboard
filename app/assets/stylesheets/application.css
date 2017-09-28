@@ -92,6 +92,18 @@ a {
   text-decoration: none;
 }
 
+textarea {
+  display: block;
+  border-radius: 5px;
+  border-color: grey;
+  padding: 8px;
+}
+
+textarea:focus {
+  outline: none;
+  border: 1px solid lightblue;
+}
+
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   font: inherit;
   font-size: 14px;
