@@ -19,7 +19,6 @@ class BoardForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.createBoard(this.state, this);
-    this.props.that.closeModal();
   }
 
   handleClickOutside(event) {

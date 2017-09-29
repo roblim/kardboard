@@ -18,7 +18,9 @@ class SecondaryNavBar extends React.Component {
     return(
       <div className="secondary-nav-bar-container">
         <h1 className="secondary-nav-bar-title">{this.props.board.title}</h1>
-        <UserSearchContainer />
+        <div className="user-search-wrapper">
+          <UserSearchContainer />
+        </div>
       </div>
     )
   }

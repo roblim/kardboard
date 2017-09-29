@@ -1,3 +1,7 @@
+.user-search-wrapper {
+  position: relative;
+}
+
 .react-autosuggest__input {
   border-radius: 5px;
   border: 1px solid grey;
@@ -5,7 +9,7 @@
 
 .react-autosuggest__container {
   position: absolute;
-  left: 200px;
+
 }
 
 .react-autosuggest__container--open {

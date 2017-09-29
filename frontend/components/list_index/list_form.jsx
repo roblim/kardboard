@@ -19,7 +19,7 @@ class ListForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.createList(this.state);
-    this.props.history.push(`/boards/${this.props.boardId}`);
+    // this.props.history.push(`/boards/${this.props.boardId}`);
     this.props.that.setState( { addListActive: false } );
   }
 
