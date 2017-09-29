@@ -3,8 +3,6 @@ import { withRouter } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
 import ListIndexItem from './list_index_item';
 import ListFormContainer from './list_form_container'
-import { DragDropContext } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
 
 class ListIndex extends React.Component {
   constructor(props) {
