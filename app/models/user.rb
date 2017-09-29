@@ -45,6 +45,12 @@ class User < ApplicationRecord
     self.password_digest = BCrypt::Password.create(password)
   end
 
+  def self.search(query)
+    self.where("name ILIKE ? OR email ILIKE ?",
+               "%#{query}%",
+               "%#{query}%")
+  end
+
   private
 
   def ensure_session_token

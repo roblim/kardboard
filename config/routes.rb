@@ -27,5 +27,9 @@ Rails.application.routes.draw do
     resources :board_shares, only: [:create, :destroy]
   end
 
+  get '/api/users/search/:query' => 'api/users#search',
+    as: 'api_users_search',
+    defaults: { format: :json }
+
   root "static_pages#root"
 end

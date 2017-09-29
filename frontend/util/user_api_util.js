@@ -4,4 +4,10 @@ const getAuthors = (cardId) => (
   })
 );
 
+const searchUsers = (query) => (
+  $.ajax({
+    url: `api/users/search/${query}`
+  })
+);
+
 export { getAuthors };
