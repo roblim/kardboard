@@ -44,7 +44,7 @@ class NavBar extends React.Component {
           {this.backButton()}
           <div className="boards-button">{this.boardsButton()}</div>
         </div>
-        <Link to="/"><h1 className='site-title'>KrdBrd</h1></Link>
+        <Link to="/"><h1 className='site-title'>Kardboard</h1></Link>
         <div className="log-out-button">{this.logOutButton()}</div>
       </div>
     );

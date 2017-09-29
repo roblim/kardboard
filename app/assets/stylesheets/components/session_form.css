@@ -41,3 +41,12 @@
 .session-input {
   margin: 10px;
 }
+
+.session-company-title {
+  font-family: 'Comfortaa', cursive;
+  font-weight: bold;
+}
+
+.session-form-container h1 {
+  font-weight: lighter;
+}

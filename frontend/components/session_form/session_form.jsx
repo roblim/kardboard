@@ -94,7 +94,7 @@ class SessionForm extends React.Component {
     return(
       <div className="session-form-container">
         <form onSubmit={this.handleSubmit} className="session-form-box">
-          <h1>Welcome to KrdBrd!</h1>
+          <h1>Welcome to <span className="session-company-title">Kardboard</span></h1>
           <br/>
           <p>Please {formType} or {this.altLink()}</p>
           {this.renderErrors()}
