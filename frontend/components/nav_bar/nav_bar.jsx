@@ -5,13 +5,18 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.backButton = this.backButton.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.props.history.push('/')
   }
 
   boardsButton() {
     if (this.props.currentUser) {
       return(
-        <button className="boards-button" onClick="">
-          <Link to="/">Boards</Link>
+        <button className="boards-button" onClick={this.handleClick}>
+          Boards
         </button>
       );
     }

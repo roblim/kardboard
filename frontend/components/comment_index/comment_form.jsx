@@ -19,6 +19,7 @@ class CommentForm extends React.Component {
   handleClick(event) {
     this.props.createComment(this.state);
     this.setState( { body: '' } );
+    this.props.that.setState( { toggle: !this.props.that.state.toggle } );
   };
 
   createAvatar() {

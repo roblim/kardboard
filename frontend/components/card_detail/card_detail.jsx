@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import DatePicker from 'react-toolbox/lib/date_picker';
 import CommentIndexContainer from '../comment_index/comment_index_container';
-import CommentFormContainer from '../comment_index/comment_form_container';
+// import CommentFormContainer from '../comment_index/comment_form_container';
 
 class CardDetail extends React.Component {
   constructor(props) {
@@ -135,7 +135,7 @@ class CardDetail extends React.Component {
             {this.descriptionUpdateButton()}
           </div>
           <h4>Comments</h4>
-          <CommentFormContainer cardId={this.props.card.id} />
+
           <CommentIndexContainer cardId={this.props.card.id} />
 
         </div>

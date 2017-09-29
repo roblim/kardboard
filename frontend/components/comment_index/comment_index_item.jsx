@@ -53,6 +53,7 @@ class CommentIndexItem extends React.Component {
 
   render() {
     if (!this.props.author) { return null; }
+
     return(
       <div className="comment-index-item-container">
         {this.createAvatar()}

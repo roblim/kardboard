@@ -6,8 +6,9 @@ import CommentIndex from './comment_index';
 
 const mapStateToProps = (state, ownProps) => ({
   cardId: parseInt(ownProps.cardId),
+  commentsObject: state.entities.comments,
   comments: selectComments(state, parseInt(ownProps.cardId)),
-  authors: selectAuthors(state, parseInt(ownProps.cardId))
+  authors: state.entities.users
 });
 
 const mapDispatchToProps = (dispatch) => ({
