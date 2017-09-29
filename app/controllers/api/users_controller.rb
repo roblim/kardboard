@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
   def index
-    @authors = Card.find_by_id(params[:card_id]).authors
+    @users = Card.find_by_id(params[:card_id]).authors
     render :index
   end
 

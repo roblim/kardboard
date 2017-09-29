@@ -1,16 +1,16 @@
-import { getAuthors, searchUsers } from '../util/user_api_util';
+import { getAuthors, getUserSearchResults } from '../util/user_api_util';
 
 export const RECEIVE_AUTHORS = 'RECEIVE_AUTHORS';
-export const RECEIVE_USERS_SEARCH_RESULTS = 'RECEIVE_USERS_SEARCH_RESULTS';
+export const RECEIVE_USER_SEARCH_RESULTS = 'RECEIVE_USER_SEARCH_RESULTS';
 
 export const receiveAuthors = (authors) => ({
   type: RECEIVE_AUTHORS,
   users: authors
 });
 
-export const receiveUsersSearchResults = (usersSearchResults) => ({
-  type: RECEIVE_USERS_SEARCH_RESULTS,
-  usersSearchResults
+export const receiveUserSearchResults = (userSearchResults) => ({
+  type: RECEIVE_USER_SEARCH_RESULTS,
+  userSearchResults
 });
 
 export const fetchAuthors = (cardId) => (dispatch) => (
@@ -21,16 +21,16 @@ export const fetchAuthors = (cardId) => (dispatch) => (
 
 export const searchUsers = (query) => (dispatch) => {
   if (query) {
-    searchUsers(query).then(
-      usersSearchResults => dispatch(
-                              receiveUsersSearchResults(
-                                usersSearchResults)
+    getUserSearchResults(query).then(
+      userSearchResults => dispatch(
+                              receiveUserSearchResults(
+                                userSearchResults)
                               )
     );
   } else {
     dispatch({
-      type: RECEIVE_USERS_SEARCH_RESULTS,
-      usersSearchResults: {}
+      type: RECEIVE_USER_SEARCH_RESULTS,
+      userSearchResults: {}
     });
   }
 };

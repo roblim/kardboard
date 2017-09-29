@@ -1,0 +1,40 @@
+.react-autosuggest__input {
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+.react-autosuggest__container {
+  z-index: 1;
+  position: absolute;
+  left: 200px;
+}
+
+.react-autosuggest__container--open {
+  background-color: white;
+  width: 300px;
+}
+
+.react-autosuggest__input--open {
+  width: 300px;
+}
+
+.react-autosuggest__suggestions-container--open {
+  width: 300px;
+}
+
+.react-autosuggest__suggestions-list {
+  width: 300px;
+}
+
+.react-autosuggest__suggestion {
+  margin: 5px;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: black;
+  color: white;
+}
+
+.search-result-email {
+  color: grey;
+}

@@ -4,10 +4,10 @@ const getAuthors = (cardId) => (
   })
 );
 
-const searchUsers = (query) => (
+const getUserSearchResults = (query) => (
   $.ajax({
     url: `api/users/search/${query}`
   })
 );
 
-export { getAuthors };
+export { getAuthors, getUserSearchResults };

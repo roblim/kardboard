@@ -48,7 +48,7 @@ class User < ApplicationRecord
   def self.search(query)
     self.where("name ILIKE ? OR email ILIKE ?",
                "%#{query}%",
-               "%#{query}%")
+               "%#{query}%").first(10)
   end
 
   private

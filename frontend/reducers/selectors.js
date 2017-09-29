@@ -1,7 +1,7 @@
 export const selectBoards = (state) => {
   let boards = Object.values(state.entities.boards);
   return boards;
-};
+}
 
 export const selectLists = (state, boardId) => {
   let lists = Object.values(state.entities.lists);
@@ -26,4 +26,9 @@ export const selectAuthors = (state, cardId) => {
   let authors = [];
   comments.forEach((comment) => authors.push(state.entities.users[comment.authorId]));
   return authors;
+}
+
+export const selectSearchResults = (state) => {
+  let searchResults = Object.values(state.ui.userSearchResults);
+  return searchResults;
 }
