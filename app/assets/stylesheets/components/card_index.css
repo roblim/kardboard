@@ -29,3 +29,32 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+
+.card-form-container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.card-form-input input {
+  width: 250px;
+  height: 36px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.submit-actions-container {
+  display: flex;
+}
+
+.card-form-cancel {
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  color: rgb(153,153,153);
+}
+
+.card-form-cancel:hover {
+  color: rgb(77,77,77);
+  cursor: pointer;
+}

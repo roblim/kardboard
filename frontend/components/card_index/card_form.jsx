@@ -9,6 +9,7 @@ class CardForm extends React.Component {
                    list_id: this.props.listId
                  };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange(field) {
@@ -20,7 +21,11 @@ class CardForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.createCard(this.state);
-    this.props.that.closeModal();
+    this.props.that.setState( { addCardActive: false } );
+  }
+
+  handleClick(event) {
+    this.props.that.setState( { addCardActive: false } );
   }
 
   render() {
@@ -35,9 +40,14 @@ class CardForm extends React.Component {
                    onChange={this.handleChange('title')}
                    />
           </div>
-          <div className="submit-button">
-            <input type="submit" hidden />
-            <button type="button" onClick={this.handleSubmit}>Add</button>
+          <div className="submit-actions-container">
+            <div className="submit-button">
+              <input type="submit" hidden />
+              <button type="button" onClick={this.handleSubmit}>Add</button>
+            </div>
+            <div className="card-form-cancel" onClick={this.handleClick}>
+              <i className="material-icons">clear</i>
+            </div>
           </div>
         </form>
       </div>

@@ -81,6 +81,7 @@ button {
 
 button:hover {
   background-color: lightgrey;
+  cursor: pointer;
 }
 
 input[type=text], input[type=password] {

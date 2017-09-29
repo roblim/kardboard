@@ -1,17 +1,26 @@
 import React from 'react';
 import CardIndexContainer from '../card_index/card_index_container';
 import CardFormContainer from '../card_index/card_form_container';
-import Modal from 'react-modal';
+import PropTypes from 'prop-types';
+import { DropTarget } from 'react-dnd';
 
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+const ItemTypes = {
+  CARD: 'card'
+};
+
+const listTarget = {
+  drop(props, monitor) {
+    const cardId = monitor.getItem().cardId;
+    const listId = props.list.id;
+    props.updateCard( { id: cardId, list_id: listId } );
   }
+};
+
+const collect = (connect, monitor) => {
+  return {
+    connectDropTarget: connect.dropTarget(),
+    isOver: monitor.isOver()
+  };
 };
 
 class ListIndexItem extends React.Component {
@@ -19,28 +28,41 @@ class ListIndexItem extends React.Component {
     super(props)
 
     this.state = {
-      modalIsOpen: false
+      addCardActive: false
     };
 
-    this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  openModal() {
-    this.setState({ modalIsOpen: true });
+  handleClick() {
+    this.setState( { addCardActive: true } );
   }
 
-  afterOpenModal() {
-    // this.subtitle.style.color = '#f00';
-  }
-
-  closeModal() {
-    this.setState({ modalIsOpen: false });
+  addCard() {
+    if (!this.state.addCardActive) {
+      return(
+        <div className="new-card-tile" onClick={this.handleClick}>
+          <div className="new-card-tile-text">
+            Add a card...
+          </div>
+        </div>
+      )
+    } else {
+      return(
+        <CardFormContainer listId={this.props.list.id} that={this}/>
+      )
+    }
   }
 
   render() {
-    return(
+    const { connectDropTarget, isOver } = this.props;
+
+    return connectDropTarget(
+      <div style={{
+        position: 'relative',
+        width: '100%',
+        height: '100%'
+      }}>
       <div className="list-index-item">
 
         <div className="list-index-item-title">
@@ -51,24 +73,30 @@ class ListIndexItem extends React.Component {
           <CardIndexContainer list={this.props.list} />
         </div>
 
-        <div className="new-card-tile" onClick={this.openModal}>
-          <div className="new-card-tile-text">
-            Add a card...
-          </div>
-        </div>
+        {this.addCard()}
 
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Add Card"
-        >
-          <CardFormContainer listId={this.props.list.id} that={this}/>
-        </Modal>
+        {isOver &&
+          <div style={{
+              position: 'absolute',
+              borderRadius: '5px',
+              top: 0,
+              left: 0,
+              height: '100%',
+              width: '100%',
+              zIndex: 1,
+              opacity: 0.5,
+              backgroundColor: 'lightblue',
+            }} />
+          }
+        </div>
       </div>
     )
   }
 }
 
-export default ListIndexItem;
+ListIndexItem.propTypes = {
+  connectDropTarget: PropTypes.func.isRequired,
+  isOver: PropTypes.bool.isRequired
+};
+
+export default DropTarget(ItemTypes.CARD, listTarget, collect)(ListIndexItem);

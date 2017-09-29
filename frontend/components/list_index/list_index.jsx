@@ -3,17 +3,8 @@ import { withRouter } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
 import ListIndexItem from './list_index_item';
 import ListFormContainer from './list_form_container'
-
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 
 class ListIndex extends React.Component {
   constructor(props) {
@@ -56,7 +47,9 @@ class ListIndex extends React.Component {
       <div className="list-index-container">
         <div className="list-index-box">
           {this.props.lists.map((list, idx) => (
-            <ListIndexItem list={list} key={`list-${idx}`} />
+            <ListIndexItem list={list}
+                           key={`list-${idx}`}
+                           updateCard={this.props.updateCard}/>
             )
           )}
           {this.addList()}
