@@ -42,6 +42,6 @@ export const updateComment = (comment) => (dispatch) => (
 
 export const destroyComment = (comment) => (dispatch) => (
   deleteComment(comment).then(
-    deletedCard => dispatch(removeCard(card))
+    deletedComment => dispatch(removeComment(deletedComment))
   )
 );

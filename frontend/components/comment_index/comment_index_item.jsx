@@ -1,8 +1,23 @@
 import React from 'react';
+import CommentDeleteMenu from './comment_delete_menu';
 
 class CommentIndexItem extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+
+    this.state = {
+      menuOpen: false
+    };
+
+    this.toggleMenu = this.toggleMenu.bind(this);
+  }
+
+  toggleMenu() {
+    if (!this.state.menuOpen) {
+      this.setState({ menuOpen: true })
+    } else {
+      this.setState({ menuOpen: false })
+    }
   }
 
   createAvatar() {
@@ -24,6 +39,18 @@ class CommentIndexItem extends React.Component {
     }
   };
 
+  commentDeleteMenu() {
+    if (this.state.menuOpen) {
+      return(
+        <CommentDeleteMenu
+          that={this}
+          outsideClickIgnoreClass="comment-delete"
+          destroyComment={this.props.destroyComment}
+          comment={this.props.comment}/>
+      )
+    }
+  }
+
   render() {
     if (!this.props.author) { return null; }
     return(
@@ -37,7 +64,13 @@ class CommentIndexItem extends React.Component {
             {this.props.comment.body}
           </div>
           <div className="comment-index-item-info">
-            {this.props.comment.createdAt}
+            {this.props.comment.createdAt} -&nbsp;
+            <span
+              onClick={this.toggleMenu}
+              className="comment-delete">Delete</span>
+            <div className="comment-delete-confirmation">
+              {this.commentDeleteMenu()}
+            </div>
           </div>
         </div>
       </div>

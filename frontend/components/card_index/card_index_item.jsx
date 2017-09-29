@@ -7,12 +7,26 @@ import { DragSource } from 'react-dnd';
 
 const customStyles = {
   content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    position                   : 'absolute',
+    top                        : '40px',
+    left                       : '40px',
+    right                      : '40px',
+    bottom                     : '40px',
+    border                     : '1px solid #ccc',
+    background                 : '#fff',
+    overflow                   : 'auto',
+    WebkitOverflowScrolling    : 'touch',
+    borderRadius               : '4px',
+    outline                    : 'none',
+    padding                    : '20px',
+    // marginRight                : '-50%',
+    // transform                  : 'translate(-50%, -50%)',
+    margin: 'auto',
+    width: '570px',
+    height: 'auto',
+    background: 'rgb(237, 237, 240)'
+
+
   }
 };
 

@@ -21,7 +21,8 @@ class CommentIndex extends React.Component {
           {this.props.comments.map((comment, idx) => (
             <CommentIndexItem comment={comment}
                               key={`comment-${idx}`}
-                              author={this.props.authors[comment.authorId]} />
+                              author={this.props.authors[comment.authorId]}
+                              destroyComment={this.props.destroyComment} />
           )
         )}
         </div>

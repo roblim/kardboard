@@ -11,7 +11,7 @@ class NavBar extends React.Component {
     if (this.props.currentUser) {
       return(
         <button className="boards-button" onClick="">
-          Boards
+          <Link to="/">Boards</Link>
         </button>
       );
     }

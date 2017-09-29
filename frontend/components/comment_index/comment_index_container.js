@@ -12,7 +12,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchComments: (cardId) => dispatch(fetchComments(cardId)),
-  fetchAuthors: (cardId) => dispatch(fetchAuthors(cardId))
+  fetchAuthors: (cardId) => dispatch(fetchAuthors(cardId)),
+  destroyComment: (comment) => dispatch(destroyComment(comment))
 });
 
 const CommentIndexContainer = connect(

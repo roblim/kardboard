@@ -14,7 +14,7 @@
 class Card < ApplicationRecord
   validates :title, :list_id, presence: true
 
-  belongs_to :list, dependent: :destroy
+  belongs_to :list
   has_many :comments
 
   has_many :authors, -> { distinct }, through: :comments

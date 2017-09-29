@@ -18,6 +18,6 @@ class Comment < ApplicationRecord
   primary_key: :id,
   class_name: :User
 
-  belongs_to :card, dependent: :destroy
+  belongs_to :card
 
 end

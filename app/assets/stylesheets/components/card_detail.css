@@ -1,6 +1,6 @@
 .card-detail-container {
   width: 570px;
-  height: 600px;
+
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -51,7 +51,7 @@
 
 
 .theme__inputElement___4bZUj:hover, .theme__inputElement___x7MhN:hover {
-  background-color: lightblue;
+  text-decoration: underline;
 }
 
 .theme__input___lFVgC.theme__input___2ISvI {
@@ -67,8 +67,8 @@
 }
 
 .due-date-picker {
-  padding-bottom: 12px;
-  color: grey;
+  padding-bottom: 10px;
+  color: blue;
   text-decoration: underline;
   font-weight: bold;
 }

@@ -74,3 +74,58 @@
 .save-comment-button {
   flex: none;
 }
+
+.comment-delete-confirmation {
+  position: relative;
+}
+
+.comment-delete-menu {
+  position: absolute;
+  z-index: 1;
+  width: 300px;
+  height: 140px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  left: 172px;
+  top: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.comment-delete:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.comment-delete-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.comment-delete-menu-heading-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.comment-delete-menu-body {
+  margin-bottom: 10px;
+}
+
+.delete-comment-button {
+  background-color: rgb(249, 76, 65);
+  color: white;
+}
+
+.close-icon-left {
+  color: white;
+}
+
+.close-icon:hover {
+  cursor: pointer;
+  color: rgb(77,77,77);
+}

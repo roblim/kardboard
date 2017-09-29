@@ -20,9 +20,10 @@ const patchComment = (comment) => (
   })
 );
 
-const deleteComment = (commentId) => (
+const deleteComment = (comment) => (
   $.ajax({
-    url: `/api/comments/${commentId}`
+    url: `/api/comments/${comment.id}`,
+    method: 'delete'
   })
 );
 
