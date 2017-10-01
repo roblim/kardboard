@@ -20,12 +20,6 @@ class Board < ApplicationRecord
 
   has_many :lists
   has_many :board_shares
+  has_many :collaborators, through: :board_shares
 
-  def collaborators=(arr)
-    @collaborators = arr
-  end
-
-  def collaborators
-    @collaborators
-  end
 end

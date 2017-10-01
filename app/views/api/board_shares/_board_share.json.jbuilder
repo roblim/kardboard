@@ -1,0 +1,3 @@
+json.boardId board_share.board_id
+json.collaboratorId board_share.collaborator_id
+json.collaborator collaborator

@@ -1,12 +1,11 @@
 .list-index-container {
-
 }
 
 .list-index-box {
   display: flex;
   align-items: flex-start;
-  margin: 20px;
-  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .list-index-item {

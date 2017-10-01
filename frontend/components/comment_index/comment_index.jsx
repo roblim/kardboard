@@ -13,6 +13,7 @@ class CommentIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchComments(this.props.cardId);
+    this.props.fetchAuthors(this.props.cardId);
   }
 
   render() {

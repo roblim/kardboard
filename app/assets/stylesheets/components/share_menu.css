@@ -1,0 +1,43 @@
+.share-board-container {
+  position: relative;
+}
+
+.share-menu-box {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+  width: 400px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.share-menu-box h4 {
+  margin-top: 10px;
+}
+
+.collaborator-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: green;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: auto;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.collaborator-name:hover {
+  cursor: default;
+}
+
+.collaborator-delete:hover {
+  cursor: pointer;
+  color: red;
+}

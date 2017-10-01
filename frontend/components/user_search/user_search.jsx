@@ -13,6 +13,7 @@ class UserSearch extends React.Component {
     this.onChange = this.onChange.bind(this);
     this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this);
     this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(this);
+    this.onSuggestionSelected = this.onSuggestionSelected.bind(this);
   }
 
   getSuggestions(value) {
@@ -20,7 +21,7 @@ class UserSearch extends React.Component {
   }
 
   getSuggestionValue(suggestion) {
-    return suggestion.name;
+    return '';
   }
 
   renderSuggestion(suggestion) {
@@ -52,6 +53,25 @@ class UserSearch extends React.Component {
     });
   }
 
+  getSectionSuggestions(section) {
+    return section.suggestions;
+  }
+
+  renderSectionTitle(section) {
+    return(
+      <div className="suggestion-section-title">{section.title}</div>
+    )
+  }
+
+  onSuggestionSelected(event, { suggestion,
+                                suggestionValue,
+                                suggestionIndex,
+                                sectionIndex,
+                                method
+                              }) {
+    this.props.createBoardShare(this.props.boardId, suggestion.id);
+  }
+
   render() {
     const inputProps = {
       placeholder: 'Share board...',
@@ -68,6 +88,10 @@ class UserSearch extends React.Component {
         renderSuggestion={this.renderSuggestion}
         inputProps={inputProps}
         highlightFirstSuggestion={true}
+        multiSection={true}
+        renderSectionTitle={this.renderSectionTitle}
+        getSectionSuggestions={this.getSectionSuggestions}
+        onSuggestionSelected={this.onSuggestionSelected}
         />
     );
   }

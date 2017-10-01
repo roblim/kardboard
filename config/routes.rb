@@ -23,12 +23,19 @@ Rails.application.routes.draw do
     end
 
     resources :comments, only: [:update, :destroy, :create]
-
-    resources :board_shares, only: [:create, :destroy]
   end
 
   get '/api/users/search/:query' => 'api/users#search',
     as: 'api_users_search',
+    defaults: { format: :json }
+
+  get '/api/board_shares/:board_id/collaborators' => 'api/board_shares#get_collaborators',
+    defaults: {format: :json }
+
+  post '/api/board_shares/:board_id/:collaborator_id' => 'api/board_shares#create',
+    defaults: { format: :json }
+
+  delete '/api/board_shares/:board_id/:collaborator_id' => 'api/board_shares#destroy',
     defaults: { format: :json }
 
   root "static_pages#root"

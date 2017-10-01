@@ -61,11 +61,14 @@ body h6 {
   height: 99vh;
 }
 
+.test {
+  height: 100%;
+}
+
 .content-area {
   display: flex;
-  padding: 20px;
-  height: 100%;
   overflow-x: auto;
+  height: 100%
 }
 
 button {

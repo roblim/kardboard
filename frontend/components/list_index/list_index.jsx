@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
 import ListIndexItem from './list_index_item';
 import ListFormContainer from './list_form_container'
+import SecondaryNavBarContainer from '../secondary_nav_bar/secondary_nav_bar_container'
 
 class ListIndex extends React.Component {
   constructor(props) {

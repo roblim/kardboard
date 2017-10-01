@@ -32,3 +32,9 @@ export const selectSearchResults = (state) => {
   let searchResults = Object.values(state.ui.userSearchResults);
   return searchResults;
 }
+
+export const selectCollaborators = (state, boardId) => {
+  let collaborators = state.entities.boards[boardId].collaborators;
+  if (!collaborators) { return []; }
+  return collaborators.map(userId => state.entities.users[userId]);
+}

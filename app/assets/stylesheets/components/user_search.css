@@ -2,43 +2,84 @@
   position: relative;
 }
 
-.react-autosuggest__input {
-  border-radius: 5px;
-  border: 1px solid grey;
-}
-
 .react-autosuggest__container {
-  position: absolute;
-
 }
 
 .react-autosuggest__container--open {
-  background-color: white;
-  width: 300px;
-  z-index: 1;
+}
+
+.react-autosuggest__input {
+  /*margin-bottom: 20px;*/
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+.react-autosuggest__input:focus {
+  outline: none;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .react-autosuggest__input--open {
-  width: 300px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid grey;
+
+}
+
+.react-autosuggest__input--focused {
+}
+
+.react-autosuggest__suggestions-container {
+
 }
 
 .react-autosuggest__suggestions-container--open {
-  width: 300px;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .react-autosuggest__suggestions-list {
-  width: 300px;
 }
 
 .react-autosuggest__suggestion {
-  margin: 5px;
+  padding: 5px;
+}
+
+.react-autosuggest__suggestion--first {
 }
 
 .react-autosuggest__suggestion--highlighted {
   background-color: black;
   color: white;
+  cursor: pointer;
+}
+
+.react-autosuggest__section-container {
+}
+
+.react-autosuggest__section-container--first {
+}
+
+.react-autosuggest__section-title{
+  font-weight: bold;
+  border-bottom: 1px solid grey;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 .search-result-email {
   color: grey;
+}
+
+.suggestion-section-title {
+
 }

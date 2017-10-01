@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
     const preloadedState = {
+      entities: {
+        users: {
+          [window.currentUser.id]: window.currentUser
+        }
+      },
       session: {
         currentUser: window.currentUser
       }
@@ -27,11 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // testing start
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchBoards = fetchBoards;
-  window.fetchBoard = fetchBoard;
-  window.createBoard = createBoard;
-  window.updateBoard = updateBoard;
-  window.destroyBoard = destroyBoard;
   // testing end
 
   const root = document.getElementById('root');

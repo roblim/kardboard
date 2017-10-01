@@ -1,3 +1,7 @@
+.board-index-container {
+
+}
+
 .board-index-box {
   display: flex;
   flex-flow: wrap;
@@ -7,6 +11,10 @@
 
 .board-index-title {
   color: white;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+
 }
 
 .board-tile {
