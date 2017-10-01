@@ -81,3 +81,11 @@
   width: 100%;
   box-sizing: border-box;
 }
+
+.board-index-container h1 {
+  background-color: rgba(0,0,0,0.3);
+  width: 280px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}

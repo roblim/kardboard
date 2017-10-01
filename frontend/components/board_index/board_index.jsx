@@ -3,17 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
 import BoardIndexItem from './board_index_item';
 import BoardFormContainer from './board_form_container';
-
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
+import SharedBoardsIndexContainer from './shared_boards_index_container';
 
 class BoardIndex extends React.Component {
   constructor(props) {
@@ -54,7 +44,7 @@ class BoardIndex extends React.Component {
     if (!this.props.boards) { return null; }
     return(
       <div className="board-index-container">
-        <h1 className="board-index-title">Private Boards</h1>
+        <h1 className="board-index-title">Personal Boards</h1>
         <div className="board-index-box">
           {this.props.boards.map((board, idx) => (
             <BoardIndexItem board={board} key={`board-${idx}`} />
@@ -62,7 +52,9 @@ class BoardIndex extends React.Component {
           )}
           {this.addBoard()}
         </div>
+        <SharedBoardsIndexContainer />
       </div>
+
     );
   }
 }

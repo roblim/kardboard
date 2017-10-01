@@ -1,10 +1,17 @@
 import { getCollaborators,
          postBoardShare,
-         deleteBoardShare } from '../util/board_share_api_util';
+         deleteBoardShare,
+         getSharedBoards } from '../util/board_share_api_util';
 
 export const RECEIVE_COLLABORATORS = 'RECEIVE_COLLABORATORS';
 export const RECEIVE_BOARD_SHARE = 'RECEIVE_BOARD_SHARE';
 export const REMOVE_BOARD_SHARE = 'REMOVE_BOARD_SHARE';
+export const RECEIVE_SHARED_BOARDS = 'RECEIVE_SHARED_BOARDS';
+
+export const receiveSharedBoards = (sharedBoards) => ({
+  type: RECEIVE_SHARED_BOARDS,
+  sharedBoards
+});
 
 export const receiveCollaborators = (collaborators, boardId) => ({
   type: RECEIVE_COLLABORATORS,
@@ -39,5 +46,11 @@ export const createBoardShare = (boardId, collaboratorId) => (dispatch) => (
 export const destroyBoardShare = (boardId, collaboratorId) => (dispatch) => (
   deleteBoardShare(boardId, collaboratorId).then(
     boardShare => dispatch(removeBoardShare(boardShare))
+  )
+);
+
+export const fetchSharedBoards = (userId) => (dispatch) => (
+  getSharedBoards(userId).then(
+    sharedBoards => dispatch(receiveSharedBoards(sharedBoards))
   )
 );

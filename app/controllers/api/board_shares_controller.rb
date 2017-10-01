@@ -5,9 +5,7 @@ class Api::BoardSharesController < ApplicationController
     @board_shares.each do |board_share|
       @boards << Board.find_by_id(board_share.board_id)
     end
-    collaborators = []
-    @board_shares
-    render :index
+    render 'api/boards/index'
   end
 
   def get_collaborators

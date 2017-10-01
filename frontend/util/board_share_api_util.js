@@ -1,3 +1,9 @@
+const getSharedBoards = (userId) => (
+  $.ajax({
+    url: `api/users/${userId}/board_shares`
+  })
+)
+
 const getCollaborators = (boardId) => (
   $.ajax({
     url: `/api/board_shares/${boardId}/collaborators`
@@ -18,4 +24,4 @@ const deleteBoardShare = (boardId, collaboratorId) => (
   })
 )
 
-export { getCollaborators, postBoardShare, deleteBoardShare };
+export { getCollaborators, postBoardShare, deleteBoardShare, getSharedBoards };
