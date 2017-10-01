@@ -27,7 +27,7 @@ class SecondaryNavBar extends React.Component {
   shareMenu() {
     if (this.state.shareMenuOpen) {
       return(
-        <ShareMenuContainer that={this} board={this.props.board}/>
+        <ShareMenuContainer that={this} board={this.props.board} outsideClickIgnoreClass="share-board-container"/>
       )
     }
   }

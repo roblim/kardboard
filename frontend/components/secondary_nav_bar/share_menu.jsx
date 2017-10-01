@@ -1,11 +1,13 @@
 import React from 'react';
 import UserSearchContainer from '../user_search/user_search_container';
+import onClickOutside from 'react-onclickoutside';
 
 class ShareMenu extends React.Component {
   constructor(props) {
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
   componentWillMount() {
@@ -22,6 +24,10 @@ class ShareMenu extends React.Component {
     if (this.props.collaborators.length > 0) {
       return <h4>Collaborators</h4>
     }
+  }
+
+  handleClickOutside() {
+    this.props.that.setState( { shareMenuOpen: false } );
   }
 
   render() {
@@ -48,4 +54,4 @@ class ShareMenu extends React.Component {
   }
 }
 
-export default ShareMenu;
+export default onClickOutside(ShareMenu);
