@@ -15,10 +15,10 @@ export const selectCards = (state, listId) => {
   return cards;
 }
 
-export const selectComments = (state, cardId) => {
-  let comments = Object.values(state.entities.comments);
-  comments = comments.filter((comment) => comment.cardId === cardId);
-  return comments;
+export const selectComments = (comments, cardId) => {
+  let commentsArray = Object.values(comments);
+  commentsArray = commentsArray.filter((comment) => comment.cardId === cardId);
+  return commentsArray;
 }
 
 export const selectAuthors = (state, cardId) => {
