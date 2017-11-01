@@ -24,7 +24,7 @@ User.create(name: 'Galen Barbour',
                     email: 'galen@galen.com',
                     password: 'password')
 
-1000.times do
+100.times do
   User.create(name: Faker::Name.name,
               email: Faker::Internet.email,
               password: 'password')

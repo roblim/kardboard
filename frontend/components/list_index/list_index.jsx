@@ -40,12 +40,22 @@ class ListIndex extends React.Component {
     }
   }
 
+  sortByOrd(list1, list2) {
+    if (list1.ord < list2.ord) {
+      return -1;
+    } else if (list1.ord > list2.ord) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+
   render() {
     if (!this.props.lists) { return null; }
     return(
       <div className="list-index-container">
         <div className="list-index-box">
-          {this.props.lists.map((list, idx) => (
+          {this.props.lists.sort(this.sortByOrd).map((list, idx) => (
             <ListIndexItem list={list}
                            key={`list-${idx}`}
                            updateCard={this.props.updateCard}/>
