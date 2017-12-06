@@ -24,5 +24,4 @@ class List < ApplicationRecord
     max_ord = sister_lists.map { |list| list.ord }.max
     max_ord ? self.ord = max_ord + 1 : self.ord = 0
   end
-
 end

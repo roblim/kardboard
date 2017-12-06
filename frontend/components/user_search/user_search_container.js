@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
     userSearchResults: {}
   }),
   createBoardShare: (boardId, collaboratorId) =>
-                      dispatch(createBoardShare(boardId, collaboratorId))
+    dispatch(createBoardShare(boardId, collaboratorId))
 });
 
 const UserSearchContainer = connect(

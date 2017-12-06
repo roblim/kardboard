@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch) => ({
   fetchCollaborators: (boardId) => dispatch(fetchCollaborators(boardId)),
   destroyBoardShare: (boardId, collaboratorId) =>
-                        dispatch(destroyBoardShare(boardId, collaboratorId))
+    dispatch(destroyBoardShare(boardId, collaboratorId))
 });
 
 const ShareMenuContainer = connect(

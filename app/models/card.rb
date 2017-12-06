@@ -18,5 +18,4 @@ class Card < ApplicationRecord
   has_many :comments
 
   has_many :authors, -> { distinct }, through: :comments
-
 end

@@ -14,10 +14,9 @@ class Comment < ApplicationRecord
   validates :body, :card_id, :author_id, presence: true
 
   belongs_to :author,
-  foreign_key: :author_id,
-  primary_key: :id,
-  class_name: :User
+              foreign_key: :author_id,
+              primary_key: :id,
+              class_name: :User
 
   belongs_to :card
-
 end

@@ -23,9 +23,8 @@ export const searchUsers = (query) => (dispatch) => {
   if (query) {
     getUserSearchResults(query).then(
       userSearchResults => dispatch(
-                              receiveUserSearchResults(
-                                userSearchResults)
-                              )
+        receiveUserSearchResults(userSearchResults)
+      )
     );
   } else {
     dispatch({

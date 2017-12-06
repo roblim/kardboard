@@ -15,9 +15,9 @@ class BoardShare < ApplicationRecord
   validates :board_id, uniqueness: { scope: :collaborator_id }
 
   belongs_to :collaborator,
-  foreign_key: :collaborator_id,
-  primary_key: :id,
-  class_name: :User
+              foreign_key: :collaborator_id,
+              primary_key: :id,
+              class_name: :User
 
   belongs_to :board
 

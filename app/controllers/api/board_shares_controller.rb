@@ -15,7 +15,7 @@ class Api::BoardSharesController < ApplicationController
 
   def create
     @board_share = BoardShare.new(board_id: params[:board_id],
-                                  collaborator_id: params[:collaborator_id])
+      collaborator_id: params[:collaborator_id])
     @collaborator = User.find_by_id(params[:collaborator_id])
     if @board_share.save
       render :show
@@ -26,7 +26,7 @@ class Api::BoardSharesController < ApplicationController
 
   def destroy
     @board_share = BoardShare.where(board_id: params[:board_id],
-                                    collaborator_id: params[:collaborator_id]).first
+      collaborator_id: params[:collaborator_id]).first
     @board_share = @board_share.destroy
     @collaborator = User.find_by_id(params[:collaborator_id])
     render :show
